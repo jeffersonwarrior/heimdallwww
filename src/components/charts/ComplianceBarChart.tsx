@@ -15,10 +15,10 @@ import {
 } from "@/components/ui/chart";
 
 const chartData = [
-  { quarter: "Q1", compliance: 70, errors: 30 }, // Starting point with higher errors
-  { quarter: "Q2", compliance: 85, errors: 15 },
-  { quarter: "Q3", compliance: 92, errors: 8 },
-  { quarter: "Q4", compliance: 98, errors: 2 }, // Near perfect compliance
+  { quarter: "Q1", compliance: 92, errors: 8 },
+  { quarter: "Q2", compliance: 95, errors: 5 },
+  { quarter: "Q3", compliance: 98, errors: 2 },
+  { quarter: "Q4", compliance: 99, errors: 1 },
 ];
 
 const chartConfig = {
@@ -68,15 +68,13 @@ export function ComplianceBarChart() {
               <Legend />
               <Bar
                 dataKey="compliance"
-                stackId="a" // Stack bars
                 fill="var(--color-compliance)"
-                radius={[4, 4, 0, 0]} // Rounded top corners for compliance
+                radius={4}
               />
               <Bar
                 dataKey="errors"
-                stackId="a" // Stack bars
                 fill="var(--color-errors)"
-                radius={[0, 0, 4, 4]} // Rounded bottom corners for errors
+                radius={4}
               />
             </BarChart>
           </ResponsiveContainer>
