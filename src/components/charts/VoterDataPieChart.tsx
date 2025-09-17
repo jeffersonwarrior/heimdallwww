@@ -42,7 +42,7 @@ const chartConfig = {
 
 export function VoterDataPieChart() {
   return (
-    <Card className="bg-white shadow-xl hover:scale-[1.02] transition-transform duration-300">
+    <Card className="bg-card shadow-xl hover:scale-[1.02] transition-transform duration-300">
       <CardHeader>
         <CardTitle>Voter Data Segmentation</CardTitle>
         <CardDescription>Distribution of different voter segments.</CardDescription>
