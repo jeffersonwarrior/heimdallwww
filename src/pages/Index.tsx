@@ -68,7 +68,7 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full border-2 border-heimdall-primary-navy text-heimdall-primary-navy shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-heimdall-primary-navy/5 focus-visible:ring-heimdall-primary-navy sm:w-auto"
+                className="w-full border-2 border-heimdall-primary-navy text-heimdall-accent-teal shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-heimdall-accent-teal/5 focus-visible:ring-heimdall-accent-teal sm:w-auto"
               >
                 Explore Features
               </Button>
