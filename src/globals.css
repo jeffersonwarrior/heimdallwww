@@ -5,7 +5,7 @@
 @layer base {
   :root {
     /* Heimdall Colors - Adjusted for Fixed Dark Mode */
-    --heimdall-primary-navy-hsl: 221 53% 30%; /* Slightly lighter navy for contrast */
+    --heimdall-primary-navy-hsl: 221 53% 50%; /* Slightly lighter navy for contrast */
     --heimdall-accent-red-hsl: 355 71% 51%; /* Keep as accent */
     --heimdall-accent-teal-hsl: 193 93% 37%; /* Keep as accent */
     --heimdall-text-primary-hsl: 210 40% 98%; /* Light text for primary */
