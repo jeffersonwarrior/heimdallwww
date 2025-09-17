@@ -19,13 +19,6 @@ export default {
     },
     extend: {
       colors: {
-        'heimdall-navy': 'hsl(var(--primary-navy))',
-        'heimdall-red': 'hsl(var(--accent-red))',
-        'heimdall-teal': 'hsl(var(--accent-teal))',
-        'heimdall-text-primary': 'hsl(var(--text-primary))',
-        'heimdall-text-body': 'hsl(var(--text-body))',
-        'heimdall-text-subtle': 'hsl(var(--text-subtle))',
-        'heimdall-bg-light': 'hsl(var(--bg-light))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
