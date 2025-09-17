@@ -229,6 +229,26 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Closing/CTA Section */}
+        <section className="relative py-24 bg-heimdall-primary-navy text-white text-center overflow-hidden">
+          <GeometricPattern /> {/* Reusing the geometric pattern for visual interest */}
+          <div className="relative z-10 max-w-4xl mx-auto px-6">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+              Ready to Transform Your Campaign?
+            </h2>
+            <p className="text-lg md:text-xl leading-relaxed mb-10 text-white/90">
+              Heimdall Strategy empowers political campaigns with unparalleled efficiency, compliance, and outreach.
+              Stop wasting time and start winning.
+            </p>
+            <Button
+              size="lg"
+              className="bg-heimdall-accent-red px-10 py-5 text-lg font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-heimdall-accent-red/90 focus-visible:ring-heimdall-accent-red"
+            >
+              Request Your Free Demo Today
+            </Button>
+          </div>
+        </section>
       </main>
       {/* Removed: <DarkModeToggle /> */}
     </div>
