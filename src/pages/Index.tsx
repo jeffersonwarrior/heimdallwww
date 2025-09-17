@@ -155,7 +155,7 @@ const Index = () => {
         </section>
 
         {/* Core Capabilities Showcase Section */}
-        <section className="py-24 bg-heimdall-bg-light text-heimdall-text-body">
+        <section id="features" className="py-24 bg-heimdall-bg-light text-heimdall-text-body">
           <div className="max-w-6xl mx-auto px-6">
             {/* Capability 1 */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
@@ -265,7 +265,7 @@ const Index = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-24 bg-heimdall-white">
+        <section id="testimonials" className="py-24 bg-heimdall-white">
           <div className="max-w-6xl mx-auto px-6 text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold text-heimdall-text-primary mb-12 leading-tight">
               What Our Clients Say
@@ -288,7 +288,7 @@ const Index = () => {
         <FAQSection />
 
         {/* Closing/CTA Section */}
-        <section className="relative py-24 bg-heimdall-primary-navy text-white text-center overflow-hidden">
+        <section id="contact" className="relative py-24 bg-heimdall-primary-navy text-white text-center overflow-hidden">
           <GeometricPattern />
           <div className="relative z-10 max-w-4xl mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
