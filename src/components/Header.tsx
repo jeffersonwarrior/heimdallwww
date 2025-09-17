@@ -22,7 +22,7 @@ const Header = () => {
           <RequestDemoDialog>
             <Button
               size="sm"
-              className="bg-heimdall-accent-red hover:bg-heimdall-accent-red/90 text-white"
+              variant="destructive"
             >
               Request a Demo
             </Button>

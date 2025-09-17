@@ -59,7 +59,8 @@ const Index = () => {
               <RequestDemoDialog>
                 <Button
                   size="lg"
-                  className="w-full bg-heimdall-accent-red px-8 py-4 text-base font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-heimdall-accent-red/90 focus-visible:ring-heimdall-accent-red sm:w-auto"
+                  variant="destructive"
+                  className="w-full shadow-lg transition-transform hover:-translate-y-0.5 focus-visible:ring-heimdall-accent-red sm:w-auto"
                 >
                   Request a Demo
                 </Button>
@@ -67,7 +68,7 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full border-2 border-heimdall-primary-navy px-8 py-4 text-base font-semibold text-heimdall-primary-navy shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-heimdall-primary-navy/5 focus-visible:ring-heimdall-primary-navy sm:w-auto"
+                className="w-full border-2 border-heimdall-primary-navy text-heimdall-primary-navy shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-heimdall-primary-navy/5 focus-visible:ring-heimdall-primary-navy sm:w-auto"
               >
                 Explore Features
               </Button>
@@ -302,7 +303,8 @@ const Index = () => {
             <RequestDemoDialog>
               <Button
                 size="lg"
-                className="bg-heimdall-accent-red px-10 py-5 text-lg font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-heimdall-accent-red/90 focus-visible:ring-heimdall-accent-red"
+                variant="destructive"
+                className="px-10 py-5 text-lg font-semibold shadow-lg transition-transform hover:-translate-y-0.5 focus-visible:ring-heimdall-accent-red"
               >
                 Request Your Free Demo Today
               </Button>

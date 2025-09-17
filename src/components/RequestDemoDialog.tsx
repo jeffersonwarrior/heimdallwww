@@ -136,7 +136,7 @@ export function RequestDemoDialog({ children }: { children: React.ReactNode }) {
                         Cancel
                     </Button>
                 </DialogClose>
-                <Button type="submit" className="bg-heimdall-accent-red hover:bg-heimdall-accent-red/90 text-white">
+                <Button type="submit" variant="destructive">
                     Submit Request
                 </Button>
             </DialogFooter>
