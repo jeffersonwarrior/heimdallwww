@@ -206,7 +206,7 @@ const Index = () => {
                 </p>
                 <div className="bg-heimdall-accent-teal/5 border border-heimdall-accent-teal/20 rounded-lg p-4 mb-6">
                   <p className="text-4xl font-bold text-heimdall-accent-teal">
-                    99% <span className="text-base font-normal text-heimdall-text-body">Reduction in Compliance Errors</span>
+                    Up to 90%+ <span className="text-base font-normal text-heimdall-text-body">Reduction in Compliance Errors</span>
                   </p>
                 </div>
                 <ul className="space-y-3">
