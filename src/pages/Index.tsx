@@ -3,10 +3,12 @@ import { NetworkVisual } from "@/components/NetworkVisual";
 import GeometricPattern from "@/components/GeometricPattern";
 import { ShieldCheck, Users, TrendingUp, Database, Scale, Megaphone, CheckCircle } from "lucide-react";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 const Index = () => {
   return (
     <div className="w-full bg-gradient-to-b from-heimdall-white to-heimdall-bg-light text-heimdall-text-body">
+      <Header />
       <main className="container mx-auto px-6">
         {/* Hero Section */}
         <section className="relative flex min-h-screen flex-col items-center justify-center lg:flex-row lg:justify-between">
