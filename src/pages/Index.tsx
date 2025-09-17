@@ -106,7 +106,7 @@ const Index = () => {
           <GeometricPattern />
           <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold italic mb-12 leading-tight">
-              Stop the campaign adrenaline drain.
+              <span className="text-heimdall-accent-red">Stop</span> the campaign adrenaline drain.
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20">
