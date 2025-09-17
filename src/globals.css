@@ -44,6 +44,13 @@
 
     --radius: 0.5rem;
 
+    /* Chart Colors */
+    --chart-1: var(--heimdall-accent-teal-hsl);
+    --chart-2: var(--heimdall-accent-red-hsl);
+    --chart-3: var(--heimdall-primary-navy-hsl);
+    --chart-4: var(--heimdall-text-body-hsl);
+    --chart-5: var(--heimdall-text-subtle-hsl);
+
     /* Sidebar specific colors (from original dark theme) */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
