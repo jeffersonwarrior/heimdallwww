@@ -4,59 +4,27 @@
 
 @layer base {
   :root {
-    /* Heimdall Colors */
-    --heimdall-primary-navy-hsl: 221 53% 20%; /* #1A2B4C */
-    --heimdall-accent-red-hsl: 355 71% 51%; /* #DC2626 */
-    --heimdall-accent-teal-hsl: 193 93% 37%; /* #0891B2 */
-    --heimdall-text-primary-hsl: 224 44% 11%; /* #0F172A */
-    --heimdall-text-body-hsl: 215 19% 35%; /* #475569 */
-    --heimdall-text-subtle-hsl: 215 16% 68%; /* #94A3B8 */
-    --heimdall-bg-light-hsl: 210 17% 98%; /* #F9FAFB */
-    --heimdall-white-hsl: 0 0% 100%; /* #FFFFFF */
+    /* Heimdall Colors - Adjusted for Fixed Dark Mode */
+    --heimdall-primary-navy-hsl: 221 53% 30%; /* Slightly lighter navy for contrast */
+    --heimdall-accent-red-hsl: 355 71% 51%; /* Keep as accent */
+    --heimdall-accent-teal-hsl: 193 93% 37%; /* Keep as accent */
+    --heimdall-text-primary-hsl: 210 40% 98%; /* Light text for primary */
+    --heimdall-text-body-hsl: 215 20.2% 65.1%; /* Lighter grey for body text */
+    --heimdall-text-subtle-hsl: 215 16% 68%; /* Subtle, but visible on dark */
+    --heimdall-bg-light-hsl: 217.2 32.6% 17.5%; /* Darker background for light areas */
+    --heimdall-white-hsl: 222.2 84% 4.9%; /* Main dark background (near black) */
 
     --background: var(--heimdall-white-hsl);
     --foreground: var(--heimdall-text-primary-hsl);
 
-    --card: var(--heimdall-white-hsl);
+    --card: var(--heimdall-bg-light-hsl);
     --card-foreground: var(--heimdall-text-primary-hsl);
 
-    --popover: var(--heimdall-white-hsl);
+    --popover: var(--heimdall-bg-light-hsl);
     --popover-foreground: var(--heimdall-text-primary-hsl);
 
-    --primary: var(--heimdall-primary-navy-hsl);
-    --primary-foreground: var(--heimdall-white-hsl);
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: var(--heimdall-bg-light-hsl);
-    --muted-foreground: var(--heimdall-text-body-hsl);
-
-    --accent: var(--heimdall-accent-teal-hsl);
-    --accent-foreground: var(--heimdall-text-primary-hsl);
-
-    --destructive: var(--heimdall-accent-red-hsl);
-    --destructive-foreground: var(--heimdall-white-hsl);
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: var(--heimdall-accent-teal-hsl);
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--heimdall-accent-teal-hsl); /* Using teal as primary interactive color */
+    --primary-foreground: var(--heimdall-white-hsl); /* Text on primary */
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -64,15 +32,19 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: var(--heimdall-accent-teal-hsl);
+    --accent-foreground: var(--heimdall-text-primary-hsl);
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: var(--heimdall-accent-red-hsl);
+    --destructive-foreground: var(--heimdall-white-hsl);
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors (from original dark theme) */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -82,6 +54,8 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  /* Remove the .dark class as we are enforcing a fixed dark theme */
 }
 
 @layer base {
