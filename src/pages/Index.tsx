@@ -8,7 +8,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import { EngagementLineChart } from "@/components/charts/EngagementLineChart";
 import { ComplianceBarChart } from "@/components/charts/ComplianceBarChart";
 import { VoterDataPieChart } from "@/components/charts/VoterDataPieChart";
-import FAQSection from "@/components/FAQSection"; // Import the new FAQSection component
+import FAQSection from "@/components/FAQSection";
 
 const Index = () => {
   const testimonials = [
@@ -151,9 +151,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <FAQSection />
-
         {/* Core Capabilities Showcase Section */}
         <section className="py-24 bg-heimdall-bg-light text-heimdall-text-body">
           <div className="max-w-6xl mx-auto px-6">
@@ -284,9 +281,12 @@ const Index = () => {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <FAQSection />
+
         {/* Closing/CTA Section */}
         <section className="relative py-24 bg-heimdall-primary-navy text-white text-center overflow-hidden">
-          <GeometricPattern /> {/* Reusing the geometric pattern for visual interest */}
+          <GeometricPattern />
           <div className="relative z-10 max-w-4xl mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
               Ready to Transform Your Campaign?
