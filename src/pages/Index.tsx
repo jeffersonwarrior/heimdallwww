@@ -216,7 +216,7 @@ const Index = () => {
                   </li>
                   <li className="flex items-center text-heimdall-text-body">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
-                    <span>Automated FEC and state-level reporting (up to 99% reduction)</span>
+                    <span>Automated FEC and state-level reporting</span>
                   </li>
                   <li className="flex items-center text-heimdall-text-body">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
