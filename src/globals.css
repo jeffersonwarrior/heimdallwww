@@ -7,6 +7,16 @@
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
+    /* Heimdall Colors */
+    --primary-navy: 223 51% 20%; /* #1A2B4C */
+    --accent-red: 0 72% 51%; /* #DC2626 */
+    --accent-teal: 193 90% 37%; /* #0891B2 */
+    --text-primary: 224 44% 11%; /* #0F172A */
+    --text-body: 215 19% 35%; /* #475569 */
+    --text-subtle: 215 25% 67%; /* #94A3B8 */
+    --bg-light: 216 33% 97%; /* #F9FAFB */
+    --white: 0 0% 100%;
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
