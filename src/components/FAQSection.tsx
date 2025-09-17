@@ -13,7 +13,7 @@ const faqItems = [
     answer: "Heimdall Strategy is a Political ERP (Enterprise Resource Planning) platform designed for modern political campaigns. It unifies communications, automates compliance, and provides authenticated messaging, all powered by AI.",
   },
   {
-    question: "How does AI-powered communication work?",
+    question: "How does AI communication work?",
     answer: "Our AI analyzes voter data and engagement patterns to help craft personalized messages, optimize delivery channels (SMS, email, social media), and predict the most effective outreach strategies for different voter segments.",
   },
   {

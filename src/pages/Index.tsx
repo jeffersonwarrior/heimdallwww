@@ -52,7 +52,7 @@ const Index = () => {
               The Modern ERP for Political Campaigns
             </h1>
             <p className="mt-6 text-lg leading-8 sm:text-xl">
-              Unify your campaign with an AI-powered platform for omnichannel
+              Unify your campaign with an AI platform for omnichannel
               communications, automated compliance, and authenticated messaging.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
@@ -89,7 +89,7 @@ const Index = () => {
               <div className="flex flex-col items-center gap-2">
                 <TrendingUp className="h-5 w-5 text-heimdall-accent-teal" />
                 <span className="text-sm font-medium text-heimdall-text-subtle">
-                  AI-Powered Outreach
+                  AI Outreach
                 </span>
               </div>
             </div>
@@ -164,7 +164,7 @@ const Index = () => {
               <div className="lg:order-1">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-1 bg-heimdall-accent-teal mr-3"></div>
-                  <h3 className="text-3xl font-bold text-heimdall-text-primary">AI-Powered Communications</h3>
+                  <h3 className="text-3xl font-bold text-heimdall-text-primary">AI Communications</h3>
                 </div>
                 <p className="text-lg leading-relaxed mb-6">
                   Leverage advanced AI to craft personalized messages, optimize delivery channels, and engage voters more effectively than ever before.
