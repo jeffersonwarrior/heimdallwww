@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import {
   Card,
   CardContent,
@@ -14,21 +14,16 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
+// Data to show average monthly errors before and after Heimdall
 const chartData = [
-  { quarter: "Q1", compliance: 92, errors: 8 },
-  { quarter: "Q2", compliance: 95, errors: 5 },
-  { quarter: "Q3", compliance: 98, errors: 2 },
-  { quarter: "Q4", compliance: 99, errors: 1 },
+  { period: "Before Heimdall", errors: 100 }, // Example: 100 errors per month
+  { period: "After Heimdall", errors: 1 },   // Example: 1 error per month (99% reduction)
 ];
 
 const chartConfig = {
-  compliance: {
-    label: "Compliance Rate",
-    color: "hsl(var(--chart-1))",
-  },
   errors: {
-    label: "Errors",
-    color: "hsl(var(--chart-2))",
+    label: "Compliance Errors",
+    color: "hsl(var(--chart-2))", // Using the error color for impact
   },
 } as const;
 
@@ -36,8 +31,8 @@ export function ComplianceBarChart() {
   return (
     <Card className="bg-white shadow-xl hover:scale-[1.02] transition-transform duration-300">
       <CardHeader>
-        <CardTitle>Compliance Performance</CardTitle>
-        <CardDescription>Quarterly compliance rates and error reduction.</CardDescription>
+        <CardTitle>Compliance Error Reduction</CardTitle>
+        <CardDescription>Average monthly compliance errors before and after Heimdall.</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
@@ -52,7 +47,7 @@ export function ComplianceBarChart() {
             >
               <CartesianGrid vertical={false} />
               <XAxis
-                dataKey="quarter"
+                dataKey="period"
                 tickLine={false}
                 axisLine={false}
                 tickMargin={8}
@@ -61,16 +56,10 @@ export function ComplianceBarChart() {
                 tickLine={false}
                 axisLine={false}
                 tickMargin={8}
-                domain={[0, 100]}
-                tickFormatter={(value) => `${value}%`}
+                domain={[0, 100]} // Max errors to show
+                tickFormatter={(value) => `${value}`}
               />
               <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-              <Legend />
-              <Bar
-                dataKey="compliance"
-                fill="var(--color-compliance)"
-                radius={4}
-              />
               <Bar
                 dataKey="errors"
                 fill="var(--color-errors)"

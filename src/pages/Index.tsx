@@ -206,7 +206,7 @@ const Index = () => {
                 </p>
                 <div className="bg-heimdall-accent-teal/5 border border-heimdall-accent-teal/20 rounded-lg p-4 mb-6">
                   <p className="text-4xl font-bold text-heimdall-accent-teal">
-                    99% <span className="text-base font-normal text-heimdall-text-body">Reduction in Compliance Errors</span>
+                    Virtually Eliminate <span className="text-base font-normal text-heimdall-text-body">Compliance Errors</span>
                   </p>
                 </div>
                 <ul className="space-y-3">
@@ -216,7 +216,7 @@ const Index = () => {
                   </li>
                   <li className="flex items-center text-heimdall-text-body">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
-                    <span>Automated FEC and state-level reporting</span>
+                    <span>Automated FEC and state-level reporting (up to 99% reduction)</span>
                   </li>
                   <li className="flex items-center text-heimdall-text-body">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
