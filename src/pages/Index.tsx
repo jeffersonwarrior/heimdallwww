@@ -10,6 +10,7 @@ import { ComplianceBarChart } from "@/components/charts/ComplianceBarChart";
 import { VoterDataPieChart } from "@/components/charts/VoterDataPieChart";
 import FAQSection from "@/components/FAQSection";
 import { RequestDemoDialog } from "@/components/RequestDemoDialog";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const Index = () => {
   const testimonials = [
@@ -310,6 +311,7 @@ const Index = () => {
         </section>
       </main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 };
