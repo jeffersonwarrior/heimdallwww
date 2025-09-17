@@ -4,51 +4,45 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Heimdall Colors */
+    --heimdall-primary-navy-hsl: 221 53% 20%; /* #1A2B4C */
+    --heimdall-accent-red-hsl: 355 71% 51%; /* #DC2626 */
+    --heimdall-accent-teal-hsl: 193 93% 37%; /* #0891B2 */
+    --heimdall-text-primary-hsl: 224 44% 11%; /* #0F172A */
+    --heimdall-text-body-hsl: 215 19% 35%; /* #475569 */
+    --heimdall-text-subtle-hsl: 215 16% 68%; /* #94A3B8 */
+    --heimdall-bg-light-hsl: 210 17% 98%; /* #F9FAFB */
+    --heimdall-white-hsl: 0 0% 100%; /* #FFFFFF */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --background: var(--heimdall-white-hsl);
+    --foreground: var(--heimdall-text-primary-hsl);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: var(--heimdall-white-hsl);
+    --card-foreground: var(--heimdall-text-primary-hsl);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: var(--heimdall-white-hsl);
+    --popover-foreground: var(--heimdall-text-primary-hsl);
+
+    --primary: var(--heimdall-primary-navy-hsl);
+    --primary-foreground: var(--heimdall-white-hsl);
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: var(--heimdall-bg-light-hsl);
+    --muted-foreground: var(--heimdall-text-body-hsl);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: var(--heimdall-accent-teal-hsl);
+    --accent-foreground: var(--heimdall-text-primary-hsl);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: var(--heimdall-accent-red-hsl);
+    --destructive-foreground: var(--heimdall-white-hsl);
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: var(--heimdall-accent-teal-hsl);
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {

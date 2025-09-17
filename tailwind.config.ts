@@ -62,6 +62,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        heimdall: {
+          "primary-navy": "hsl(var(--heimdall-primary-navy-hsl))",
+          "accent-red": "hsl(var(--heimdall-accent-red-hsl))",
+          "accent-teal": "hsl(var(--heimdall-accent-teal-hsl))",
+          "text-primary": "hsl(var(--heimdall-text-primary-hsl))",
+          "text-body": "hsl(var(--heimdall-text-body-hsl))",
+          "text-subtle": "hsl(var(--heimdall-text-subtle-hsl))",
+          "bg-light": "hsl(var(--heimdall-bg-light-hsl))",
+          white: "hsl(var(--heimdall-white-hsl))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
