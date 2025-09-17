@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { NetworkVisual } from "@/components/NetworkVisual";
 import GeometricPattern from "@/components/GeometricPattern";
 import { ShieldCheck, Users, TrendingUp, Database, Scale, Megaphone, CheckCircle } from "lucide-react";
-// Removed: import DarkModeToggle from "@/components/DarkModeToggle";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -250,7 +250,7 @@ const Index = () => {
           </div>
         </section>
       </main>
-      {/* Removed: <DarkModeToggle /> */}
+      <Footer />
     </div>
   );
 };
