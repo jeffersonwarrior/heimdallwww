@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react"; // For a mobile menu icon
+import { RequestDemoDialog } from "@/components/RequestDemoDialog";
 
 const Header = () => {
   return (
@@ -28,12 +29,14 @@ const Header = () => {
 
         {/* Call to Action Button */}
         <div className="hidden md:block">
-          <Button
-            size="sm"
-            className="bg-heimdall-accent-red hover:bg-heimdall-accent-red/90 text-white"
-          >
-            Request a Demo
-          </Button>
+          <RequestDemoDialog>
+            <Button
+              size="sm"
+              className="bg-heimdall-accent-red hover:bg-heimdall-accent-red/90 text-white"
+            >
+              Request a Demo
+            </Button>
+          </RequestDemoDialog>
         </div>
 
         {/* Mobile Menu Toggle (Placeholder for now) */}

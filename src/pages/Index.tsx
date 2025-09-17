@@ -9,6 +9,7 @@ import { EngagementLineChart } from "@/components/charts/EngagementLineChart";
 import { ComplianceBarChart } from "@/components/charts/ComplianceBarChart";
 import { VoterDataPieChart } from "@/components/charts/VoterDataPieChart";
 import FAQSection from "@/components/FAQSection";
+import { RequestDemoDialog } from "@/components/RequestDemoDialog";
 
 const Index = () => {
   const testimonials = [
@@ -54,12 +55,14 @@ const Index = () => {
               communications, automated compliance, and authenticated messaging.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
-              <Button
-                size="lg"
-                className="w-full bg-heimdall-accent-red px-8 py-4 text-base font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-heimdall-accent-red/90 focus-visible:ring-heimdall-accent-red sm:w-auto"
-              >
-                Request a Demo
-              </Button>
+              <RequestDemoDialog>
+                <Button
+                  size="lg"
+                  className="w-full bg-heimdall-accent-red px-8 py-4 text-base font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-heimdall-accent-red/90 focus-visible:ring-heimdall-accent-red sm:w-auto"
+                >
+                  Request a Demo
+                </Button>
+              </RequestDemoDialog>
               <Button
                 size="lg"
                 variant="outline"
@@ -295,12 +298,14 @@ const Index = () => {
               Heimdall Strategy empowers political campaigns with unparalleled efficiency, compliance, and outreach.
               Stop wasting time and start winning.
             </p>
-            <Button
-              size="lg"
-              className="bg-heimdall-accent-red px-10 py-5 text-lg font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-heimdall-accent-red/90 focus-visible:ring-heimdall-accent-red"
-            >
-              Request Your Free Demo Today
-            </Button>
+            <RequestDemoDialog>
+              <Button
+                size="lg"
+                className="bg-heimdall-accent-red px-10 py-5 text-lg font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-heimdall-accent-red/90 focus-visible:ring-heimdall-accent-red"
+              >
+                Request Your Free Demo Today
+              </Button>
+            </RequestDemoDialog>
           </div>
         </section>
       </main>
