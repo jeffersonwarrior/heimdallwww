@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { NetworkVisual } from "@/components/NetworkVisual";
 import GeometricPattern from "@/components/GeometricPattern";
-import { ShieldCheck, Users, TrendingUp, Database, Scale, Megaphone } from "lucide-react";
+import { ShieldCheck, Users, TrendingUp, Database, Scale, Megaphone, CheckCircle } from "lucide-react";
 
 const Index = () => {
   return (
@@ -113,6 +113,119 @@ const Index = () => {
               <span className="absolute left-0 bottom-0 h-0.5 w-full bg-heimdall-accent-teal scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
               </strong> designed to streamline operations, ensure compliance, and amplify your message.
             </p>
+          </div>
+        </section>
+
+        {/* Core Capabilities Showcase Section */}
+        <section className="py-24 bg-heimdall-bg-light text-heimdall-text-body">
+          <div className="max-w-6xl mx-auto px-6">
+            {/* Capability 1 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+              <div className="lg:order-1">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-1 bg-heimdall-accent-teal mr-3"></div>
+                  <h3 className="text-3xl font-bold text-heimdall-text-primary">AI-Powered Communications</h3>
+                </div>
+                <p className="text-lg leading-relaxed mb-6">
+                  Leverage advanced AI to craft personalized messages, optimize delivery channels, and engage voters more effectively than ever before.
+                </p>
+                <div className="bg-heimdall-accent-teal/5 border border-heimdall-accent-teal/20 rounded-lg p-4 mb-6">
+                  <p className="text-4xl font-bold text-heimdall-accent-teal">
+                    +40% <span className="text-base font-normal text-heimdall-text-body">Voter Engagement</span>
+                  </p>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-center text-heimdall-text-body">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                    <span>Automated message personalization</span>
+                  </li>
+                  <li className="flex items-center text-heimdall-text-body">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                    <span>Omnichannel delivery (SMS, Email, Social)</span>
+                  </li>
+                  <li className="flex items-center text-heimdall-text-body">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                    <span>Sentiment analysis for real-time feedback</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="relative p-6 bg-white rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-300 lg:order-2">
+                <img src="/placeholder.svg" alt="AI Communications Dashboard" className="w-full h-auto rounded-md" />
+                <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ boxShadow: '0 20px 25px rgba(0,0,0,0.15)' }}></div>
+              </div>
+            </div>
+
+            {/* Capability 2 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+              <div className="lg:order-2">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-1 bg-heimdall-accent-teal mr-3"></div>
+                  <h3 className="text-3xl font-bold text-heimdall-text-primary">Automated Compliance & Reporting</h3>
+                </div>
+                <p className="text-lg leading-relaxed mb-6">
+                  Stay ahead of complex election laws with built-in compliance checks, automated reporting, and audit-ready data.
+                </p>
+                <div className="bg-heimdall-accent-teal/5 border border-heimdall-accent-teal/20 rounded-lg p-4 mb-6">
+                  <p className="text-4xl font-bold text-heimdall-accent-teal">
+                    99% <span className="text-base font-normal text-heimdall-text-body">Reduction in Compliance Errors</span>
+                  </p>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-center text-heimdall-text-body">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                    <span>Real-time regulatory updates</span>
+                  </li>
+                  <li className="flex items-center text-heimdall-text-body">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                    <span>Automated FEC and state-level reporting</span>
+                  </li>
+                  <li className="flex items-center text-heimdall-text-body">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                    <span>Secure, auditable transaction logs</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="relative p-6 bg-white rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-300 lg:order-1">
+                <img src="/placeholder.svg" alt="Compliance Dashboard" className="w-full h-auto rounded-md" />
+                <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ boxShadow: '0 20px 25px rgba(0,0,0,0.15)' }}></div>
+              </div>
+            </div>
+
+            {/* Capability 3 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="lg:order-1">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-1 bg-heimdall-accent-teal mr-3"></div>
+                  <h3 className="text-3xl font-bold text-heimdall-text-primary">Unified Voter Data Platform</h3>
+                </div>
+                <p className="text-lg leading-relaxed mb-6">
+                  Consolidate all voter information, volunteer data, and donor insights into a single, intelligent platform for a 360-degree view.
+                </p>
+                <div className="bg-heimdall-accent-teal/5 border border-heimdall-accent-teal/20 rounded-lg p-4 mb-6">
+                  <p className="text-4xl font-bold text-heimdall-accent-teal">
+                    2x <span className="text-base font-normal text-heimdall-text-body">Faster Data Analysis</span>
+                  </p>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-center text-heimdall-text-body">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                    <span>Centralized voter profiles</span>
+                  </li>
+                  <li className="flex items-center text-heimdall-text-body">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                    <span>Integrated volunteer management</span>
+                  </li>
+                  <li className="flex items-center text-heimdall-text-body">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                    <span>Advanced segmentation and targeting</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="relative p-6 bg-white rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-300 lg:order-2">
+                <img src="/placeholder.svg" alt="Voter Data Platform" className="w-full h-auto rounded-md" />
+                <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ boxShadow: '0 20px 25px rgba(0,0,0,0.15)' }}></div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
