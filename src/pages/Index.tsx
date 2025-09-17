@@ -5,6 +5,9 @@ import { ShieldCheck, Users, TrendingUp, Database, Scale, Megaphone, CheckCircle
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TestimonialCard from "@/components/TestimonialCard";
+import { EngagementLineChart } from "@/components/charts/EngagementLineChart";
+import { ComplianceBarChart } from "@/components/charts/ComplianceBarChart";
+import { VoterDataPieChart } from "@/components/charts/VoterDataPieChart";
 
 const Index = () => {
   const testimonials = [
@@ -180,9 +183,8 @@ const Index = () => {
                   </li>
                 </ul>
               </div>
-              <div className="relative p-6 bg-white rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-300 lg:order-2">
-                <img src="/placeholder.svg" alt="AI Communications Dashboard" className="w-full h-auto rounded-md" />
-                <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ boxShadow: '0 20px 25px rgba(0,0,0,0.15)' }}></div>
+              <div className="lg:order-2">
+                <EngagementLineChart />
               </div>
             </div>
 
@@ -216,9 +218,8 @@ const Index = () => {
                   </li>
                 </ul>
               </div>
-              <div className="relative p-6 bg-white rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-300 lg:order-1">
-                <img src="/placeholder.svg" alt="Compliance Dashboard" className="w-full h-auto rounded-md" />
-                <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ boxShadow: '0 20px 25px rgba(0,0,0,0.15)' }}></div>
+              <div className="lg:order-1">
+                <ComplianceBarChart />
               </div>
             </div>
 
@@ -252,9 +253,8 @@ const Index = () => {
                   </li>
                 </ul>
               </div>
-              <div className="relative p-6 bg-white rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-300 lg:order-2">
-                <img src="/placeholder.svg" alt="Voter Data Platform" className="w-full h-auto rounded-md" />
-                <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ boxShadow: '0 20px 25px rgba(0,0,0,0.15)' }}></div>
+              <div className="lg:order-2">
+                <VoterDataPieChart />
               </div>
             </div>
           </div>
