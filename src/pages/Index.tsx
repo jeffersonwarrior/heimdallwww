@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { NetworkVisual } from "@/components/NetworkVisual";
 import GeometricPattern from "@/components/GeometricPattern";
 import { ShieldCheck, Users, TrendingUp, Database, Scale, Megaphone, CheckCircle } from "lucide-react";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 const Index = () => {
   return (
@@ -229,6 +230,7 @@ const Index = () => {
           </div>
         </section>
       </main>
+      <DarkModeToggle />
     </div>
   );
 };
