@@ -29,7 +29,7 @@ const chartConfig = {
 
 export function ComplianceBarChart() {
   return (
-    <Card className="bg-white shadow-xl hover:scale-[1.02] transition-transform duration-300">
+    <Card className="bg-card shadow-xl hover:scale-[1.02] transition-transform duration-300">
       <CardHeader>
         <CardTitle>Compliance Error Reduction</CardTitle>
         <CardDescription>Average monthly compliance errors before and after Heimdall.</CardDescription>
