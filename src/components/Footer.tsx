@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <footer className="bg-heimdall-white text-heimdall-text-subtle">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-8">
           {/* Logo & Mission */}
-          <div className="col-span-2 lg:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <h3 className="text-lg font-bold text-heimdall-text-primary mb-2">Heimdall Strategy</h3>
             <p className="text-sm">The Political ERP for Modern Campaigns.</p>
           </div>
