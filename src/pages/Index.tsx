@@ -8,6 +8,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import { EngagementLineChart } from "@/components/charts/EngagementLineChart";
 import { ComplianceBarChart } from "@/components/charts/ComplianceBarChart";
 import { VoterDataPieChart } from "@/components/charts/VoterDataPieChart";
+import FAQSection from "@/components/FAQSection"; // Import the new FAQSection component
 
 const Index = () => {
   const testimonials = [
@@ -149,6 +150,9 @@ const Index = () => {
             </p>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection />
 
         {/* Core Capabilities Showcase Section */}
         <section className="py-24 bg-heimdall-bg-light text-heimdall-text-body">
