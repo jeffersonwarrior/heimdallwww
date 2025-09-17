@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <a href="/" className="flex items-center">
       <img
-        src="https://www.heimdallstrategy.com/logo.svg"
+        src="/heimdall-logo.svg" // Updated to use the local SVG file
         alt="Heimdall Strategy Logo"
         className="h-8 w-auto"
       />
