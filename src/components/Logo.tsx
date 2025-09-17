@@ -1,13 +1,12 @@
 "use client";
 
 import React from 'react';
-import { ShieldCheck } from 'lucide-react';
 
 const Logo = () => {
+  const imageUrl = "https://assets-global.website-files.com/65f712111111111111111111/65f712111111111111111111_Heimdall%20Strategy%20Logo.svg";
   return (
-    <a href="/" className="flex items-center space-x-2">
-      <ShieldCheck className="h-8 w-auto text-heimdall-primary-navy" />
-      <span className="text-xl font-bold text-heimdall-primary-navy">Heimdall Strategy</span>
+    <a href="/" className="flex items-center">
+      <img src={imageUrl} alt="Heimdall Strategy Logo" className="h-8 w-auto" />
     </a>
   );
 };
