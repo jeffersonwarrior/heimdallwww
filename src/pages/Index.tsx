@@ -4,8 +4,36 @@ import GeometricPattern from "@/components/GeometricPattern";
 import { ShieldCheck, Users, TrendingUp, Database, Scale, Megaphone, CheckCircle } from "lucide-react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import TestimonialCard from "@/components/TestimonialCard";
 
 const Index = () => {
+  const testimonials = [
+    {
+      quote: "Heimdall Strategy transformed our campaign's outreach. The AI-powered personalization led to unprecedented engagement rates.",
+      author: "Sarah Chen",
+      title: "Campaign Manager, 'Vote for Change'",
+      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=SC"
+    },
+    {
+      quote: "Compliance used to be a nightmare. With Heimdall, we're confident our reporting is always accurate and audit-ready.",
+      author: "David Lee",
+      title: "Treasurer, 'Progressive Alliance'",
+      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=DL"
+    },
+    {
+      quote: "Having all our voter data in one place, intelligently organized, has made our targeting incredibly effective. A game-changer!",
+      author: "Maria Rodriguez",
+      title: "Field Director, 'Community First'",
+      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=MR"
+    },
+    {
+      quote: "The unified platform saved us countless hours. We can now focus on strategy instead of administrative burdens.",
+      author: "John Smith",
+      title: "Political Consultant",
+      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=JS"
+    }
+  ];
+
   return (
     <div className="w-full bg-gradient-to-b from-heimdall-white to-heimdall-bg-light text-heimdall-text-body">
       <Header />
@@ -228,6 +256,26 @@ const Index = () => {
                 <img src="/placeholder.svg" alt="Voter Data Platform" className="w-full h-auto rounded-md" />
                 <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ boxShadow: '0 20px 25px rgba(0,0,0,0.15)' }}></div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-24 bg-heimdall-white">
+          <div className="max-w-6xl mx-auto px-6 text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-heimdall-text-primary mb-12 leading-tight">
+              What Our Clients Say
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard
+                  key={index}
+                  quote={testimonial.quote}
+                  author={testimonial.author}
+                  title={testimonial.title}
+                  avatarSrc={testimonial.avatarSrc}
+                />
+              ))}
             </div>
           </div>
         </section>
