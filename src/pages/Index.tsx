@@ -17,13 +17,13 @@ const Index = () => {
     {
       quote: "Heimdall Strategy transformed our campaign's outreach. The AI-powered personalization led to unprecedented engagement rates.",
       author: "Sarah Chen",
-      title: "Campaign Manager, 'Vote for Change'",
+      title: "Campaign Manager",
       avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=SC"
     },
     {
       quote: "Compliance used to be a nightmare. With Heimdall, we're confident our reporting is always accurate and audit-ready.",
       author: "David Lee",
-      title: "Treasurer, 'Progressive Alliance'",
+      title: "Treasurer",
       avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=DL"
     },
     {
