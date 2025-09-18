@@ -18,22 +18,25 @@ const Footer = () => {
             <h4 className="font-semibold text-heimdall-text-primary mb-4">Product</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a href="/features" className="hover:text-heimdall-accent-teal transition-colors">
                   Features
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a href="/pricing" className="hover:text-heimdall-accent-teal transition-colors">
                   Pricing
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a
+                  href="/integrations"
+                  className="hover:text-heimdall-accent-teal transition-colors"
+                >
                   Integrations
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a href="/security" className="hover:text-heimdall-accent-teal transition-colors">
                   Security
                 </a>
               </li>
@@ -45,22 +48,22 @@ const Footer = () => {
             <h4 className="font-semibold text-heimdall-text-primary mb-4">Company</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a href="/about" className="hover:text-heimdall-accent-teal transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a href="/careers" className="hover:text-heimdall-accent-teal transition-colors">
                   Careers
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a href="/contact" className="hover:text-heimdall-accent-teal transition-colors">
                   Contact
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a href="/press" className="hover:text-heimdall-accent-teal transition-colors">
                   Press
                 </a>
               </li>
@@ -72,22 +75,25 @@ const Footer = () => {
             <h4 className="font-semibold text-heimdall-text-primary mb-4">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a href="/blog" className="hover:text-heimdall-accent-teal transition-colors">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a
+                  href="/case-studies"
+                  className="hover:text-heimdall-accent-teal transition-colors"
+                >
                   Case Studies
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a href="/docs" className="hover:text-heimdall-accent-teal transition-colors">
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-heimdall-accent-teal transition-colors">
+                <a href="/status" className="hover:text-heimdall-accent-teal transition-colors">
                   API Status
                 </a>
               </li>
@@ -128,10 +134,13 @@ const Footer = () => {
             &copy; {currentYear} Heimdall Strategy, Inc. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
-            <a href="#" className="text-sm hover:text-heimdall-accent-teal transition-colors">
+            <a
+              href="/privacy"
+              className="text-sm hover:text-heimdall-accent-teal transition-colors"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="text-sm hover:text-heimdall-accent-teal transition-colors">
+            <a href="/terms" className="text-sm hover:text-heimdall-accent-teal transition-colors">
               Terms of Service
             </a>
           </div>
