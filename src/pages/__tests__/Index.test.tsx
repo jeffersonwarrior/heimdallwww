@@ -1,15 +1,15 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Index from "@/pages/Index";
-import { BrowserRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
 test("renders hero heading", () => {
   render(
     <HelmetProvider>
-      <BrowserRouter>
+      <MemoryRouter>
         <Index />
-      </BrowserRouter>
+      </MemoryRouter>
     </HelmetProvider>,
   );
   const heading = screen.getByText(/The Modern ERP for Political Campaigns/i);

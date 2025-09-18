@@ -45,9 +45,9 @@ const ChartCardSkeleton = ({ title, description }: { title: string; description?
         <Skeleton className="h-6 w-48" />
       </CardTitle>
       {description ? (
-        <CardDescription>
+        <div className="text-sm text-muted-foreground">
           <Skeleton className="h-4 w-72" />
-        </CardDescription>
+        </div>
       ) : null}
     </CardHeader>
     <CardContent>
