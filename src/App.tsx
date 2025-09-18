@@ -24,6 +24,7 @@ import Docs from "@/pages/Docs";
 import APIStatus from "@/pages/APIStatus";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
+import DoNotSellShare from "@/pages/DoNotSellShare";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +56,7 @@ const App = () => (
               <Route path="/status" element={<APIStatus />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/do-not-sell-or-share" element={<DoNotSellShare />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

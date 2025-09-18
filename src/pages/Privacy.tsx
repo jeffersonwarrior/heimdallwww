@@ -60,7 +60,24 @@ const Privacy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">4. Sharing and Third-Party Services</h2>
+              <h2 className="text-2xl font-bold mb-4">
+                4. We Do Not Sell or Share Personal Information
+              </h2>
+              <p>
+                We do not sell or share personal information as those terms are defined under
+                applicable U.S. state privacy laws (including the California Consumer Privacy Act,
+                as amended by the CPRA). We also honor opt-out preference signals where applicable.
+                If you have any questions or believe this statement should be updated, contact us at
+                <a className="underline" href="mailto:hello@heimdallstrategy.com">
+                  {" "}
+                  hello@heimdallstrategy.com
+                </a>
+                .
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold mb-4">5. Sharing and Third-Party Services</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>
                   Vendors and service providers that host, analyze, communicate, or support our
@@ -73,7 +90,7 @@ const Privacy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">5. Your Rights (GDPR/CCPA)</h2>
+              <h2 className="text-2xl font-bold mb-4">6. Your Rights (GDPR/CCPA)</h2>
               <p>
                 Depending on your jurisdiction, you may have rights to access, delete, correct, or
                 receive a copy of your personal information, or to object/restrict certain
@@ -87,7 +104,7 @@ const Privacy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">6. Contact Us</h2>
+              <h2 className="text-2xl font-bold mb-4">7. Contact Us</h2>
               <p>
                 Questions or requests? Email{" "}
                 <a href="mailto:hello@heimdallstrategy.com" className="underline">
@@ -98,7 +115,7 @@ const Privacy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">7. Company Information</h2>
+              <h2 className="text-2xl font-bold mb-4">8. Company Information</h2>
               <p>
                 Heimdall Strategy Solutions, Inc.
                 <br />

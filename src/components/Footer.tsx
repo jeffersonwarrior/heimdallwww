@@ -135,6 +135,12 @@ const Footer = () => {
           </p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
             <a
+              href="/do-not-sell-or-share"
+              className="text-sm hover:text-heimdall-accent-teal transition-colors"
+            >
+              Do Not Sell or Share
+            </a>
+            <a
               href="/privacy"
               className="text-sm hover:text-heimdall-accent-teal transition-colors"
             >
