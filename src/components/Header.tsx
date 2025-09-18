@@ -20,10 +20,7 @@ const Header = () => {
         {/* Call to Action Button */}
         <div className="hidden md:block">
           <RequestDemoDialog>
-            <Button
-              size="sm"
-              variant="destructive"
-            >
+            <Button size="sm" variant="destructive">
               Request a Demo
             </Button>
           </RequestDemoDialog>

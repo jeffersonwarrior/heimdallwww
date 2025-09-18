@@ -1,18 +1,17 @@
 "use client";
 
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 
 const chartData = [
   { month: "Jan", engagement: 180, previous: 150 },
@@ -60,12 +59,7 @@ export function EngagementLineChart() {
                 tickMargin={8}
                 tickFormatter={(value) => value.slice(0, 3)}
               />
-              <YAxis
-                tickLine={false}
-                axisLine={false}
-                tickMargin={8}
-                domain={[0, 400]}
-              />
+              <YAxis tickLine={false} axisLine={false} tickMargin={8} domain={[0, 400]} />
               <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
               <Legend />
               <Line

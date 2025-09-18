@@ -1,35 +1,41 @@
 import { Button } from "@/components/ui/button";
-import { NetworkVisual } from "@/components/NetworkVisual";
-import GeometricPattern from "@/components/GeometricPattern";
-import { ShieldCheck, Users, TrendingUp, Database, Scale, Megaphone, CheckCircle } from "lucide-react";
+import {
+  ShieldCheck,
+  Users,
+  TrendingUp,
+  Database,
+  Scale,
+  Megaphone,
+  CheckCircle,
+} from "lucide-react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TestimonialCard from "@/components/TestimonialCard";
 import React, { Suspense } from "react";
+import { Helmet } from "react-helmet-async";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
+const EngagementLineChartLazyImport = () => import("@/components/charts/EngagementLineChart");
 const EngagementLineChartLazy = React.lazy(() =>
-  import("@/components/charts/EngagementLineChart").then((m) => ({
-    default: m.EngagementLineChart,
-  })),
+  EngagementLineChartLazyImport().then((m) => ({ default: m.EngagementLineChart })),
 );
+const ComplianceBarChartLazyImport = () => import("@/components/charts/ComplianceBarChart");
 const ComplianceBarChartLazy = React.lazy(() =>
-  import("@/components/charts/ComplianceBarChart").then((m) => ({
-    default: m.ComplianceBarChart,
-  })),
+  ComplianceBarChartLazyImport().then((m) => ({ default: m.ComplianceBarChart })),
 );
+const VoterDataPieChartLazyImport = () => import("@/components/charts/VoterDataPieChart");
 const VoterDataPieChartLazy = React.lazy(() =>
-  import("@/components/charts/VoterDataPieChart").then((m) => ({
-    default: m.VoterDataPieChart,
-  })),
+  VoterDataPieChartLazyImport().then((m) => ({ default: m.VoterDataPieChart })),
 );
 
+const NetworkVisualLazyImport = () => import("@/components/NetworkVisual");
 const NetworkVisualLazy = React.lazy(() =>
-  import("@/components/NetworkVisual").then((m) => ({ default: m.NetworkVisual })),
+  NetworkVisualLazyImport().then((m) => ({ default: m.NetworkVisual })),
 );
+const GeometricPatternLazyImport = () => import("@/components/GeometricPattern");
 const GeometricPatternLazy = React.lazy(() =>
-  import("@/components/GeometricPattern").then((m) => ({ default: m.default })),
+  GeometricPatternLazyImport().then((m) => ({ default: m.default })),
 );
 
 const ChartCardSkeleton = ({ title, description }: { title: string; description?: string }) => (
@@ -52,37 +58,49 @@ const ChartCardSkeleton = ({ title, description }: { title: string; description?
 import FAQSection from "@/components/FAQSection";
 import { RequestDemoDialog } from "@/components/RequestDemoDialog";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import { usePrefetchOnView } from "@/hooks/usePrefetchOnView";
 
 const Index = () => {
   const testimonials = [
     {
-      quote: "Heimdall Strategy transformed our campaign's outreach. The AI-powered personalization led to unprecedented engagement rates.",
+      quote:
+        "Heimdall Strategy transformed our campaign's outreach. The AI-powered personalization led to unprecedented engagement rates.",
       author: "Sarah Chen",
       title: "Campaign Manager",
-      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=SC"
+      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=SC",
     },
     {
-      quote: "Compliance used to be a nightmare. With Heimdall, we're confident our reporting is always accurate and audit-ready.",
+      quote:
+        "Compliance used to be a nightmare. With Heimdall, we're confident our reporting is always accurate and audit-ready.",
       author: "David Lee",
       title: "Treasurer",
-      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=DL"
+      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=DL",
     },
     {
-      quote: "Having all our voter data in one place, intelligently organized, has made our targeting incredibly effective. A game-changer!",
+      quote:
+        "Having all our voter data in one place, intelligently organized, has made our targeting incredibly effective. A game-changer!",
       author: "Maria Rodriguez",
       title: "Field Director, 'Community First'",
-      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=MR"
+      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=MR",
     },
     {
-      quote: "The unified platform saved us countless hours. We can now focus on strategy instead of administrative burdens.",
+      quote:
+        "The unified platform saved us countless hours. We can now focus on strategy instead of administrative burdens.",
       author: "John Smith",
       title: "Political Consultant",
-      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=JS"
-    }
+      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=JS",
+    },
   ];
 
   return (
     <div className="w-full bg-gradient-to-b from-heimdall-white to-heimdall-bg-light text-heimdall-text-body">
+      <Helmet>
+        <title>Heimdall Strategy — The Modern ERP for Political Campaigns</title>
+        <meta
+          name="description"
+          content="Unify your campaign with an AI platform for omnichannel communications, automated compliance, and authenticated messaging."
+        />
+      </Helmet>
       <Header />
       <main className="container mx-auto px-6">
         {/* Hero Section */}
@@ -93,8 +111,8 @@ const Index = () => {
               The Modern ERP for Political Campaigns
             </h1>
             <p className="mt-6 text-lg leading-8 sm:text-xl">
-              Unify your campaign with an AI platform for omnichannel
-              communications, automated compliance, and authenticated messaging.
+              Unify your campaign with an AI platform for omnichannel communications, automated
+              compliance, and authenticated messaging.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <RequestDemoDialog>
@@ -129,18 +147,22 @@ const Index = () => {
               </div>
               <div className="flex flex-col items-center gap-2">
                 <TrendingUp className="h-5 w-5 text-heimdall-accent-teal" />
-                <span className="text-sm font-medium text-heimdall-text-subtle">
-                  AI Outreach
-                </span>
+                <span className="text-sm font-medium text-heimdall-text-subtle">AI Outreach</span>
               </div>
             </div>
           </div>
 
           {/* Right Visual Element */}
           <div className="absolute right-0 top-0 h-full w-full lg:relative lg:w-2/5">
-            <Suspense fallback={<div className="h-full w-full bg-muted/20" /> }>
-              <NetworkVisualLazy className="h-full w-full" />
-            </Suspense>
+            <div
+              ref={usePrefetchOnView<HTMLDivElement>(() => {
+                void NetworkVisualLazyImport();
+              })}
+            >
+              <Suspense fallback={<div className="h-full w-full bg-muted/20" />}>
+                <NetworkVisualLazy className="h-full w-full" />
+              </Suspense>
+            </div>
           </div>
         </section>
 
@@ -160,7 +182,8 @@ const Index = () => {
                 <Database className="h-12 w-12 text-heimdall-accent-red mb-4" />
                 <h3 className="text-xl font-bold mb-2">Fragmented Data</h3>
                 <p className="text-white/80 text-base leading-relaxed mb-4">
-                  Voter data, communications, and volunteer efforts are scattered across disparate systems.
+                  Voter data, communications, and volunteer efforts are scattered across disparate
+                  systems.
                 </p>
                 <p className="text-2xl font-bold text-heimdall-accent-teal">
                   37% <span className="text-base font-normal text-white/80">lack integration</span>
@@ -172,7 +195,8 @@ const Index = () => {
                 <Scale className="h-12 w-12 text-heimdall-accent-red mb-4" />
                 <h3 className="text-xl font-bold mb-2">Compliance Headaches</h3>
                 <p className="text-white/80 text-base leading-relaxed mb-4">
-                  Navigating complex election laws and reporting requirements is a constant struggle.
+                  Navigating complex election laws and reporting requirements is a constant
+                  struggle.
                 </p>
                 <p className="text-2xl font-bold text-heimdall-accent-teal">
                   25% <span className="text-base font-normal text-white/80">face audit risks</span>
@@ -194,9 +218,12 @@ const Index = () => {
 
             <p className="max-w-3xl mx-auto text-lg text-white/90 leading-relaxed">
               These challenges drain resources and momentum. It's time for a unified approach.
-              Heimdall Strategy offers the only <strong className="text-white relative inline-block">Political ERP
-              <span className="absolute left-0 bottom-0 h-0.5 w-full bg-heimdall-accent-teal scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-              </strong> designed to streamline operations, ensure compliance, and amplify your message.
+              Heimdall Strategy offers the only{" "}
+              <strong className="text-white relative inline-block">
+                Political ERP
+                <span className="absolute left-0 bottom-0 h-0.5 w-full bg-heimdall-accent-teal scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+              </strong>{" "}
+              designed to streamline operations, ensure compliance, and amplify your message.
             </p>
           </div>
         </section>
@@ -209,14 +236,20 @@ const Index = () => {
               <div className="lg:order-1">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-1 bg-heimdall-accent-teal mr-3"></div>
-                  <h3 className="text-3xl font-bold text-heimdall-text-primary">AI Communications</h3>
+                  <h3 className="text-3xl font-bold text-heimdall-text-primary">
+                    AI Communications
+                  </h3>
                 </div>
                 <p className="text-lg leading-relaxed mb-6">
-                  Leverage advanced AI to craft personalized messages, optimize delivery channels, and engage voters more effectively than ever before.
+                  Leverage advanced AI to craft personalized messages, optimize delivery channels,
+                  and engage voters more effectively than ever before.
                 </p>
                 <div className="bg-heimdall-accent-teal/5 border border-heimdall-accent-teal/20 rounded-lg p-4 mb-6">
                   <p className="text-4xl font-bold text-heimdall-accent-teal">
-                    +40% <span className="text-base font-normal text-heimdall-text-body">Voter Engagement</span>
+                    +40%{" "}
+                    <span className="text-base font-normal text-heimdall-text-body">
+                      Voter Engagement
+                    </span>
                   </p>
                 </div>
                 <ul className="space-y-3">
@@ -234,8 +267,20 @@ const Index = () => {
                   </li>
                 </ul>
               </div>
-              <div className="lg:order-2">
-                <Suspense fallback={<ChartCardSkeleton title="Voter Engagement" description="Monthly engagement trends compared to previous period." /> }>
+              <div
+                className="lg:order-2"
+                ref={usePrefetchOnView<HTMLDivElement>(() => {
+                  void EngagementLineChartLazyImport();
+                })}
+              >
+                <Suspense
+                  fallback={
+                    <ChartCardSkeleton
+                      title="Voter Engagement"
+                      description="Monthly engagement trends compared to previous period."
+                    />
+                  }
+                >
                   <EngagementLineChartLazy />
                 </Suspense>
               </div>
@@ -246,14 +291,20 @@ const Index = () => {
               <div className="lg:order-2">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-1 bg-heimdall-accent-teal mr-3"></div>
-                  <h3 className="text-3xl font-bold text-heimdall-text-primary">Automated Compliance & Reporting</h3>
+                  <h3 className="text-3xl font-bold text-heimdall-text-primary">
+                    Automated Compliance & Reporting
+                  </h3>
                 </div>
                 <p className="text-lg leading-relaxed mb-6">
-                  Stay ahead of complex election laws with built-in compliance checks, automated reporting, and audit-ready data.
+                  Stay ahead of complex election laws with built-in compliance checks, automated
+                  reporting, and audit-ready data.
                 </p>
                 <div className="bg-heimdall-accent-teal/5 border border-heimdall-accent-teal/20 rounded-lg p-4 mb-6">
                   <p className="text-4xl font-bold text-heimdall-accent-teal">
-                    Eliminate <span className="text-base font-normal text-heimdall-text-body">Compliance Errors</span>
+                    Eliminate{" "}
+                    <span className="text-base font-normal text-heimdall-text-body">
+                      Compliance Errors
+                    </span>
                   </p>
                 </div>
                 <ul className="space-y-3">
@@ -271,8 +322,20 @@ const Index = () => {
                   </li>
                 </ul>
               </div>
-              <div className="lg:order-1">
-                <Suspense fallback={<ChartCardSkeleton title="Compliance Error Reduction" description="Average monthly compliance errors before and after Heimdall." /> }>
+              <div
+                className="lg:order-1"
+                ref={usePrefetchOnView<HTMLDivElement>(() => {
+                  void ComplianceBarChartLazyImport();
+                })}
+              >
+                <Suspense
+                  fallback={
+                    <ChartCardSkeleton
+                      title="Compliance Error Reduction"
+                      description="Average monthly compliance errors before and after Heimdall."
+                    />
+                  }
+                >
                   <ComplianceBarChartLazy />
                 </Suspense>
               </div>
@@ -283,14 +346,20 @@ const Index = () => {
               <div className="lg:order-1">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-1 bg-heimdall-accent-teal mr-3"></div>
-                  <h3 className="text-3xl font-bold text-heimdall-text-primary">Unified Voter Data Platform</h3>
+                  <h3 className="text-3xl font-bold text-heimdall-text-primary">
+                    Unified Voter Data Platform
+                  </h3>
                 </div>
                 <p className="text-lg leading-relaxed mb-6">
-                  Consolidate all voter information, volunteer data, and donor insights into a single, intelligent platform for a 360-degree view.
+                  Consolidate all voter information, volunteer data, and donor insights into a
+                  single, intelligent platform for a 360-degree view.
                 </p>
                 <div className="bg-heimdall-accent-teal/5 border border-heimdall-accent-teal/20 rounded-lg p-4 mb-6">
                   <p className="text-4xl font-bold text-heimdall-accent-teal">
-                    2x <span className="text-base font-normal text-heimdall-text-body">Faster Data Analysis</span>
+                    2x{" "}
+                    <span className="text-base font-normal text-heimdall-text-body">
+                      Faster Data Analysis
+                    </span>
                   </p>
                 </div>
                 <ul className="space-y-3">
@@ -308,8 +377,20 @@ const Index = () => {
                   </li>
                 </ul>
               </div>
-              <div className="lg:order-2">
-                <Suspense fallback={<ChartCardSkeleton title="Voter Data Segmentation" description="Distribution of different voter segments." /> }>
+              <div
+                className="lg:order-2"
+                ref={usePrefetchOnView<HTMLDivElement>(() => {
+                  void VoterDataPieChartLazyImport();
+                })}
+              >
+                <Suspense
+                  fallback={
+                    <ChartCardSkeleton
+                      title="Voter Data Segmentation"
+                      description="Distribution of different voter segments."
+                    />
+                  }
+                >
                   <VoterDataPieChartLazy />
                 </Suspense>
               </div>
@@ -341,15 +422,20 @@ const Index = () => {
         <FAQSection />
 
         {/* Closing/CTA Section */}
-        <section id="contact" className="relative py-24 bg-heimdall-primary-navy text-white text-center overflow-hidden">
-          <GeometricPattern />
+        <section
+          id="contact"
+          className="relative py-24 bg-heimdall-primary-navy text-white text-center overflow-hidden"
+        >
+          <Suspense fallback={null}>
+            <GeometricPatternLazy />
+          </Suspense>
           <div className="relative z-10 max-w-4xl mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
               Ready to Transform Your Campaign?
             </h2>
             <p className="text-lg md:text-xl leading-relaxed mb-10 text-white/90">
-              Heimdall Strategy empowers political campaigns with unparalleled efficiency, compliance, and outreach.
-              Stop wasting time and start winning.
+              Heimdall Strategy empowers political campaigns with unparalleled efficiency,
+              compliance, and outreach. Stop wasting time and start winning.
             </p>
             <RequestDemoDialog>
               <Button
