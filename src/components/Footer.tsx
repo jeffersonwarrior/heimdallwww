@@ -27,19 +27,6 @@ const Footer = () => {
                   Pricing
                 </a>
               </li>
-              <li>
-                <a
-                  href="/integrations"
-                  className="hover:text-heimdall-accent-teal transition-colors"
-                >
-                  Integrations
-                </a>
-              </li>
-              <li>
-                <a href="/security" className="hover:text-heimdall-accent-teal transition-colors">
-                  Security
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -85,16 +72,6 @@ const Footer = () => {
                   className="hover:text-heimdall-accent-teal transition-colors"
                 >
                   Case Studies
-                </a>
-              </li>
-              <li>
-                <a href="/docs" className="hover:text-heimdall-accent-teal transition-colors">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a href="/status" className="hover:text-heimdall-accent-teal transition-colors">
-                  API Status
                 </a>
               </li>
             </ul>

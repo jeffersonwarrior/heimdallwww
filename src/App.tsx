@@ -12,16 +12,12 @@ import Analytics from "@/components/analytics/Analytics";
 import { CookieConsentProvider } from "@/components/privacy/CookieConsent";
 import Features from "@/pages/Features";
 import Pricing from "@/pages/Pricing";
-import Integrations from "@/pages/Integrations";
-import Security from "@/pages/Security";
 import About from "@/pages/About";
 import Careers from "@/pages/Careers";
 import Contact from "@/pages/Contact";
 import Press from "@/pages/Press";
 import Blog from "@/pages/Blog";
 import CaseStudies from "@/pages/CaseStudies";
-import Docs from "@/pages/Docs";
-import APIStatus from "@/pages/APIStatus";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 import DoNotSellShare from "@/pages/DoNotSellShare";
@@ -44,16 +40,12 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/features" element={<Features />} />
               <Route path="/pricing" element={<Pricing />} />
-              <Route path="/integrations" element={<Integrations />} />
-              <Route path="/security" element={<Security />} />
               <Route path="/about" element={<About />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/press" element={<Press />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/case-studies" element={<CaseStudies />} />
-              <Route path="/docs" element={<Docs />} />
-              <Route path="/status" element={<APIStatus />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/do-not-sell-or-share" element={<DoNotSellShare />} />
