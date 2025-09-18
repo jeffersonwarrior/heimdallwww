@@ -1,0 +1,80 @@
+stages:
+  - setup
+  - lint
+  - typecheck
+  - test
+  - build
+
+variables:
+  NODE_ENV: development
+  PNPM_HOME: "$CI_PROJECT_DIR/.pnpm"
+  # Speed up installs
+  PNPM_STORE_DIR: "$CI_PROJECT_DIR/.pnpm-store"
+
+.default-job-template: &default-job-template
+  image: node:20-bullseye
+  before_script:
+    - corepack enable
+    - corepack prepare pnpm@9 --activate
+    - pnpm --version
+    - node --version
+    - pnpm install --frozen-lockfile
+  cache:
+    key:
+      files:
+        - pnpm-lock.yaml
+    paths:
+      - .pnpm-store
+      - node_modules
+    policy: pull-push
+
+install:
+  stage: setup
+  <<: *default-job-template
+  script:
+    - echo "Dependencies installed"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+lint:
+  stage: lint
+  <<: *default-job-template
+  script:
+    - pnpm lint
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+Typecheck:
+  stage: typecheck
+  <<: *default-job-template
+  script:
+    - pnpm run typecheck
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+Test:
+  stage: test
+  <<: *default-job-template
+  script:
+    - pnpm test:run
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+Build:
+  stage: build
+  <<: *default-job-template
+  script:
+    - pnpm build
+  artifacts:
+    when: always
+    expire_in: 7 days
+    paths:
+      - dist/
+      - dist/stats.html
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
