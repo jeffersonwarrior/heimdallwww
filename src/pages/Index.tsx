@@ -8,8 +8,6 @@ import {
   Megaphone,
   CheckCircle,
 } from "lucide-react";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import TestimonialCard from "@/components/TestimonialCard";
 import React, { Suspense } from "react";
 import { Helmet } from "react-helmet-async";
@@ -115,7 +113,6 @@ const Index = () => {
           content="Unify your campaign with an AI platform for omnichannel communications, automated compliance, and authenticated messaging."
         />
       </Helmet>
-      <Header />
       <main className="container mx-auto px-6">
         {/* Hero Section */}
         <section className="relative flex min-h-screen flex-col items-center justify-center lg:flex-row lg:justify-between max-w-6xl mx-auto">
@@ -463,7 +460,6 @@ const Index = () => {
           </div>
         </section>
       </main>
-      <Footer />
       <ScrollToTopButton />
     </div>
   );

@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
 
 const Terms = () => {
@@ -11,7 +9,6 @@ const Terms = () => {
         <meta name="description" content="Terms and conditions for using Heimdall Strategy." />
       </Helmet>
       <div className="min-h-screen bg-background">
-        <Header />
         <main className="container mx-auto px-6 py-16 max-w-4xl">
           <h1 className="text-4xl font-extrabold mb-8 text-heimdall-text-primary">
             Terms of Service
@@ -126,7 +123,6 @@ const Terms = () => {
             </section>
           </div>
         </main>
-        <Footer />
       </div>
     </>
   );

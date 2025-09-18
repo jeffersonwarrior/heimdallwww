@@ -1,6 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export default function DoNotSellShare() {
   return (
@@ -12,7 +10,6 @@ export default function DoNotSellShare() {
           content="Information about your privacy choices at Heimdall Strategy."
         />
       </Helmet>
-      <Header />
       <main className="container mx-auto px-6 py-16 max-w-3xl">
         <h1 className="text-4xl font-extrabold mb-6 text-heimdall-text-primary">
           Do Not Sell or Share My Personal Information
@@ -34,7 +31,6 @@ export default function DoNotSellShare() {
           </p>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

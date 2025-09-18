@@ -1,22 +1,6 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
-
-const STORAGE_KEY = "cookie_consent";
-
-type Consent = {
-  necessary: true;
-  analytics: boolean;
-  marketing: boolean;
-  date: string;
-};
-
-type CookieConsentContextValue = {
-  consent: Consent | null;
-  setConsent: (value: Consent) => void;
-  openPreferences: () => void;
-};
-
-const CookieConsentContext = createContext<CookieConsentContextValue | null>(null);
+import { CookieConsentContext, type Consent, STORAGE_KEY } from "./useCookieConsent";
 
 export function CookieConsentProvider({ children }: { children: React.ReactNode }) {
   const [consent, setConsentState] = useState<Consent | null>(null);
@@ -93,12 +77,6 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
       ) : null}
     </CookieConsentContext.Provider>
   );
-}
-
-export function useCookieConsent() {
-  const ctx = useContext(CookieConsentContext);
-  if (!ctx) throw new Error("useCookieConsent must be used within CookieConsentProvider");
-  return ctx;
 }
 
 function Banner({

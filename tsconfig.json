@@ -20,11 +20,5 @@
     "strictNullChecks": false,
     "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": [
-    "src",
-    "vite.config.ts",
-    "vitest.config.ts",
-    "eslint.config.js",
-    "index.html"
-  ]
+  "include": ["src", "vite.config.ts", "vitest.config.ts", "eslint.config.js", "index.html"]
 }
