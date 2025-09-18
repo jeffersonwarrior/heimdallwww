@@ -5,9 +5,50 @@ import { ShieldCheck, Users, TrendingUp, Database, Scale, Megaphone, CheckCircle
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TestimonialCard from "@/components/TestimonialCard";
-import { EngagementLineChart } from "@/components/charts/EngagementLineChart";
-import { ComplianceBarChart } from "@/components/charts/ComplianceBarChart";
-import { VoterDataPieChart } from "@/components/charts/VoterDataPieChart";
+import React, { Suspense } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+
+const EngagementLineChartLazy = React.lazy(() =>
+  import("@/components/charts/EngagementLineChart").then((m) => ({
+    default: m.EngagementLineChart,
+  })),
+);
+const ComplianceBarChartLazy = React.lazy(() =>
+  import("@/components/charts/ComplianceBarChart").then((m) => ({
+    default: m.ComplianceBarChart,
+  })),
+);
+const VoterDataPieChartLazy = React.lazy(() =>
+  import("@/components/charts/VoterDataPieChart").then((m) => ({
+    default: m.VoterDataPieChart,
+  })),
+);
+
+const NetworkVisualLazy = React.lazy(() =>
+  import("@/components/NetworkVisual").then((m) => ({ default: m.NetworkVisual })),
+);
+const GeometricPatternLazy = React.lazy(() =>
+  import("@/components/GeometricPattern").then((m) => ({ default: m.default })),
+);
+
+const ChartCardSkeleton = ({ title, description }: { title: string; description?: string }) => (
+  <Card className="bg-card shadow-xl">
+    <CardHeader>
+      <CardTitle>
+        <Skeleton className="h-6 w-48" />
+      </CardTitle>
+      {description ? (
+        <CardDescription>
+          <Skeleton className="h-4 w-72" />
+        </CardDescription>
+      ) : null}
+    </CardHeader>
+    <CardContent>
+      <Skeleton className="h-[300px] w-full" />
+    </CardContent>
+  </Card>
+);
 import FAQSection from "@/components/FAQSection";
 import { RequestDemoDialog } from "@/components/RequestDemoDialog";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
@@ -97,13 +138,17 @@ const Index = () => {
 
           {/* Right Visual Element */}
           <div className="absolute right-0 top-0 h-full w-full lg:relative lg:w-2/5">
-            <NetworkVisual className="h-full w-full" />
+            <Suspense fallback={<div className="h-full w-full bg-muted/20" /> }>
+              <NetworkVisualLazy className="h-full w-full" />
+            </Suspense>
           </div>
         </section>
 
         {/* Problem Agitation Section */}
         <section className="relative py-32 bg-heimdall-primary-navy text-white overflow-hidden">
-          <GeometricPattern />
+          <Suspense fallback={null}>
+            <GeometricPatternLazy />
+          </Suspense>
           <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold italic mb-12 leading-tight">
               <span className="text-heimdall-accent-red">Stop</span> the campaign adrenaline drain.
@@ -190,7 +235,9 @@ const Index = () => {
                 </ul>
               </div>
               <div className="lg:order-2">
-                <EngagementLineChart />
+                <Suspense fallback={<ChartCardSkeleton title="Voter Engagement" description="Monthly engagement trends compared to previous period." /> }>
+                  <EngagementLineChartLazy />
+                </Suspense>
               </div>
             </div>
 
@@ -225,7 +272,9 @@ const Index = () => {
                 </ul>
               </div>
               <div className="lg:order-1">
-                <ComplianceBarChart />
+                <Suspense fallback={<ChartCardSkeleton title="Compliance Error Reduction" description="Average monthly compliance errors before and after Heimdall." /> }>
+                  <ComplianceBarChartLazy />
+                </Suspense>
               </div>
             </div>
 
@@ -260,7 +309,9 @@ const Index = () => {
                 </ul>
               </div>
               <div className="lg:order-2">
-                <VoterDataPieChart />
+                <Suspense fallback={<ChartCardSkeleton title="Voter Data Segmentation" description="Distribution of different voter segments." /> }>
+                  <VoterDataPieChartLazy />
+                </Suspense>
               </div>
             </div>
           </div>
