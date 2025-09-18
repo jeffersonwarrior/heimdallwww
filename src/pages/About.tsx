@@ -110,10 +110,21 @@ export default function About() {
           {/* Kevin Numerick */}
           <Card className="border-muted">
             <CardHeader className="flex flex-col items-center text-center">
-              <Avatar className="h-16 w-16 mb-3">
-                <AvatarImage src="/team/kevin-numerick.jpg" alt="Kevin Numerick" />
-                <AvatarFallback>KN</AvatarFallback>
-              </Avatar>
+              <div className="relative inline-block mb-3">
+                <Avatar className="h-16 w-16">
+                  <AvatarImage src="/team/kevin-numerick.jpg" alt="Kevin Numerick" />
+                  <AvatarFallback>KN</AvatarFallback>
+                </Avatar>
+                <a
+                  href="https://www.linkedin.com/in/knumerick2008"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Kevin Numerick on LinkedIn"
+                  className="absolute -bottom-1 -right-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white shadow ring-1 ring-black/10 hover:ring-primary/50"
+                >
+                  <Linkedin className="h-3.5 w-3.5 text-[#0a66c2]" />
+                </a>
+              </div>
               <CardTitle>Kevin Numerick</CardTitle>
               <CardDescription>Chief Executive Officer</CardDescription>
             </CardHeader>
@@ -136,7 +147,7 @@ export default function About() {
               <div className="pt-2 flex justify-center">
                 <Button variant="outline" size="sm" asChild>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/knumerick2008"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Kevin Numerick on LinkedIn"
@@ -151,10 +162,21 @@ export default function About() {
           {/* Sam Nevarez */}
           <Card className="border-muted">
             <CardHeader className="flex flex-col items-center text-center">
-              <Avatar className="h-16 w-16 mb-3">
-                <AvatarImage src="/team/sam-nevarez.jpg" alt="Sam Nevarez" />
-                <AvatarFallback>SN</AvatarFallback>
-              </Avatar>
+              <div className="relative inline-block mb-3">
+                <Avatar className="h-16 w-16">
+                  <AvatarImage src="/team/sam-nevarez.jpg" alt="Sam Nevarez" />
+                  <AvatarFallback>SN</AvatarFallback>
+                </Avatar>
+                <a
+                  href="https://www.linkedin.com/in/samuel-nevarez-8344b476"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Sam Nevarez on LinkedIn"
+                  className="absolute -bottom-1 -right-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white shadow ring-1 ring-black/10 hover:ring-primary/50"
+                >
+                  <Linkedin className="h-3.5 w-3.5 text-[#0a66c2]" />
+                </a>
+              </div>
               <CardTitle>Sam Nevarez</CardTitle>
               <CardDescription>Chief Operating Officer</CardDescription>
             </CardHeader>
@@ -175,7 +197,12 @@ export default function About() {
               </p>
               <div className="pt-2 flex justify-center">
                 <Button variant="outline" size="sm" asChild>
-                  <a href="#" target="_blank" rel="noreferrer" aria-label="Sam Nevarez on LinkedIn">
+                  <a
+                    href="https://www.linkedin.com/in/samuel-nevarez-8344b476"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Sam Nevarez on LinkedIn"
+                  >
                     <Linkedin className="h-4 w-4 mr-2" /> LinkedIn
                   </a>
                 </Button>
@@ -186,10 +213,21 @@ export default function About() {
           {/* Jefferson Nunn */}
           <Card className="border-muted">
             <CardHeader className="flex flex-col items-center text-center">
-              <Avatar className="h-16 w-16 mb-3">
-                <AvatarImage src="/team/jefferson-nunn.jpg" alt="Jefferson Nunn" />
-                <AvatarFallback>JN</AvatarFallback>
-              </Avatar>
+              <div className="relative inline-block mb-3">
+                <Avatar className="h-16 w-16">
+                  <AvatarImage src="/team/jefferson-nunn.jpg" alt="Jefferson Nunn" />
+                  <AvatarFallback>JN</AvatarFallback>
+                </Avatar>
+                <a
+                  href="https://www.linkedin.com/in/jeffersonnunn"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Jefferson Nunn on LinkedIn"
+                  className="absolute -bottom-1 -right-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white shadow ring-1 ring-black/10 hover:ring-primary/50"
+                >
+                  <Linkedin className="h-3.5 w-3.5 text-[#0a66c2]" />
+                </a>
+              </div>
               <CardTitle>Jefferson Nunn</CardTitle>
               <CardDescription>Chief Technology Officer</CardDescription>
             </CardHeader>
@@ -214,7 +252,7 @@ export default function About() {
               <div className="flex items-center justify-center gap-2 pt-2">
                 <Button variant="outline" size="sm" asChild>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/jeffersonnunn"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Jefferson Nunn on LinkedIn"
