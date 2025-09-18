@@ -1,7 +1,13 @@
 const PLAUSIBLE_DOMAIN = import.meta.env.VITE_PLAUSIBLE_DOMAIN;
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
+import { useCookieConsent } from "@/components/privacy/CookieConsent";
+
 export default function Analytics() {
+  const { consent } = useCookieConsent();
+  const allowAnalytics = consent?.analytics === true;
+  if (!allowAnalytics) return null;
+
   return (
     <>
       {PLAUSIBLE_DOMAIN ? (

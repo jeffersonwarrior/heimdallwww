@@ -73,10 +73,16 @@ const Privacy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">5. Your Rights</h2>
+              <h2 className="text-2xl font-bold mb-4">5. Your Rights (GDPR/CCPA)</h2>
               <p>
-                You have the right to access, update, or delete your personal information. You may
-                also opt out of certain communications from us.
+                Depending on your jurisdiction, you may have rights to access, delete, correct, or
+                receive a copy of your personal information, or to object/restrict certain
+                processing. To submit a request, email{" "}
+                <a className="underline" href="mailto:hello@heimdallstrategy.com">
+                  hello@heimdallstrategy.com
+                </a>{" "}
+                with your name, the nature of your request, and a way to verify your identity. We
+                will respond within the time required by law (generally 30–45 days).
               </p>
             </section>
 
@@ -84,10 +90,21 @@ const Privacy = () => {
               <h2 className="text-2xl font-bold mb-4">6. Contact Us</h2>
               <p>
                 Questions or requests? Email{" "}
-                <a href="mailto:contact@heimdallstrategy.com" className="underline">
-                  contact@heimdallstrategy.com
+                <a href="mailto:hello@heimdallstrategy.com" className="underline">
+                  hello@heimdallstrategy.com
                 </a>
                 .
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold mb-4">7. Company Information</h2>
+              <p>
+                Heimdall Strategy Solutions, Inc.
+                <br />
+                9300 John Hickman Parkway, Suite 1102
+                <br />
+                Frisco, TX 75035
               </p>
             </section>
           </div>
