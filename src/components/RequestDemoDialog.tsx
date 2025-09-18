@@ -69,7 +69,8 @@ export function RequestDemoDialog({ children }: { children: React.ReactNode }) {
         <DialogHeader>
           <DialogTitle>Request a Demo</DialogTitle>
           <DialogDescription>
-            Fill out the form below and our team will get in touch with you shortly to schedule a demo.
+            Fill out the form below and our team will get in touch with you shortly to schedule a
+            demo.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -131,14 +132,14 @@ export function RequestDemoDialog({ children }: { children: React.ReactNode }) {
               )}
             />
             <DialogFooter>
-                <DialogClose asChild>
-                    <Button type="button" variant="secondary">
-                        Cancel
-                    </Button>
-                </DialogClose>
-                <Button type="submit" variant="destructive">
-                    Submit Request
+              <DialogClose asChild>
+                <Button type="button" variant="secondary">
+                  Cancel
                 </Button>
+              </DialogClose>
+              <Button type="submit" variant="destructive">
+                Submit Request
+              </Button>
             </DialogFooter>
           </form>
         </Form>

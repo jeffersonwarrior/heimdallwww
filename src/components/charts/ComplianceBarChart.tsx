@@ -1,23 +1,13 @@
 "use client";
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 
 // Data to show average monthly errors before and after Heimdall
 const chartData = [
   { period: "Before Heimdall", errors: 100 }, // Example: 100 errors per month
-  { period: "After Heimdall", errors: 1 },   // Example: 1 error per month (99% reduction)
+  { period: "After Heimdall", errors: 1 }, // Example: 1 error per month (99% reduction)
 ];
 
 const chartConfig = {
@@ -32,7 +22,9 @@ export function ComplianceBarChart() {
     <Card className="bg-card shadow-xl hover:scale-[1.02] transition-transform duration-300">
       <CardHeader>
         <CardTitle>Compliance Error Reduction</CardTitle>
-        <CardDescription>Average monthly compliance errors before and after Heimdall.</CardDescription>
+        <CardDescription>
+          Average monthly compliance errors before and after Heimdall.
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
@@ -46,12 +38,7 @@ export function ComplianceBarChart() {
               }}
             >
               <CartesianGrid vertical={false} />
-              <XAxis
-                dataKey="period"
-                tickLine={false}
-                axisLine={false}
-                tickMargin={8}
-              />
+              <XAxis dataKey="period" tickLine={false} axisLine={false} tickMargin={8} />
               <YAxis
                 tickLine={false}
                 axisLine={false}
@@ -60,11 +47,7 @@ export function ComplianceBarChart() {
                 tickFormatter={(value) => `${value}`}
               />
               <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-              <Bar
-                dataKey="errors"
-                fill="var(--color-errors)"
-                radius={4}
-              />
+              <Bar dataKey="errors" fill="var(--color-errors)" radius={4} />
             </BarChart>
           </ResponsiveContainer>
         </ChartContainer>

@@ -1,16 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowUp } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { ArrowUp } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   // Show button when page is scrolled down
   const toggleVisibility = () => {
-    if (window.pageYOffset > 300) { // Show after scrolling 300px
+    if (window.pageYOffset > 300) {
+      // Show after scrolling 300px
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -19,9 +20,9 @@ const ScrollToTopButton = () => {
 
   // Set up scroll event listener
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
     return () => {
-      window.removeEventListener('scroll', toggleVisibility);
+      window.removeEventListener("scroll", toggleVisibility);
     };
   }, []);
 
@@ -29,15 +30,17 @@ const ScrollToTopButton = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   return (
-    <div className={cn(
-      "fixed bottom-6 right-6 z-50 transition-opacity duration-300",
-      isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-    )}>
+    <div
+      className={cn(
+        "fixed bottom-6 right-6 z-50 transition-opacity duration-300",
+        isVisible ? "opacity-100" : "opacity-0 pointer-events-none",
+      )}
+    >
       <Button
         onClick={scrollToTop}
         size="icon"

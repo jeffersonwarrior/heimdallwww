@@ -24,7 +24,10 @@ export function DesktopNav() {
           <NavigationMenuItem key={item.title}>
             <NavigationMenuLink
               href={item.href}
-              className={cn(navigationMenuTriggerStyle(), "text-heimdall-text-primary hover:text-heimdall-accent-red")}
+              className={cn(
+                navigationMenuTriggerStyle(),
+                "text-heimdall-text-primary hover:text-heimdall-accent-red",
+              )}
             >
               {item.title}
             </NavigationMenuLink>
