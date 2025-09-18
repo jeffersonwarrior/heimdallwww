@@ -35,10 +35,19 @@ const Privacy = () => {
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold mb-4">2. How We Use Your Information</h2>
-              <p>
-                We use the information we collect to provide, maintain, and improve our services,
-                process transactions, send communications, and comply with legal obligations.
-              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Provide, maintain, and improve our services.</li>
+                <li>Process transactions and respond to requests or demos.</li>
+                <li>
+                  Sales and marketing communications via phone calls, emails, and SMS/text messages.
+                  By submitting your information or contacting us, you agree that we (or our service
+                  providers) may contact you at the email address or phone number you provide,
+                  including by using an automated system as permitted by law. Message/data rates may
+                  apply; frequency varies. You can opt-out at any time (reply STOP to texts, use
+                  email unsubscribe, or contact us).
+                </li>
+                <li>Security, fraud prevention, legal compliance, and enforcing our terms.</li>
+              </ul>
             </section>
 
             <section className="mb-8">
@@ -51,12 +60,16 @@ const Privacy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">4. Third-Party Services</h2>
-              <p>
-                We do not sell, trade, or otherwise transfer your personal information to third
-                parties without your consent, except as described in this policy or as required by
-                law.
-              </p>
+              <h2 className="text-2xl font-bold mb-4">4. Sharing and Third-Party Services</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>
+                  Vendors and service providers that host, analyze, communicate, or support our
+                  operations under confidentiality obligations.
+                </li>
+                <li>Legal/safety where required or permitted by law.</li>
+                <li>Business transfers (e.g., merger, acquisition), subject to applicable law.</li>
+                <li>With your consent or direction.</li>
+              </ul>
             </section>
 
             <section className="mb-8">
@@ -70,8 +83,11 @@ const Privacy = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold mb-4">6. Contact Us</h2>
               <p>
-                If you have any questions about this Privacy Policy, please contact us at
-                privacy@heimdallstrategy.com.
+                Questions or requests? Email{" "}
+                <a href="mailto:contact@heimdallstrategy.com" className="underline">
+                  contact@heimdallstrategy.com
+                </a>
+                .
               </p>
             </section>
           </div>
