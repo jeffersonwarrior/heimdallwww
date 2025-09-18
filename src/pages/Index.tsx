@@ -90,6 +90,20 @@ const Index = () => {
       title: "Political Consultant",
       avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=JS",
     },
+    {
+      quote:
+        "Heimdall gave us clarity where we had chaos. Our team can finally coordinate outreach, data, and compliance in one rhythm.",
+      author: "Priya Menon",
+      title: "State Director",
+      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=PM",
+    },
+    {
+      quote:
+        "The platform pays for itself. We cut busywork in half and re‑focused on winning conversations with voters.",
+      author: "Marcus Allen",
+      title: "Campaign Operations Lead",
+      avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=MA",
+    },
   ];
 
   return (
@@ -104,7 +118,7 @@ const Index = () => {
       <Header />
       <main className="container mx-auto px-6">
         {/* Hero Section */}
-        <section className="relative flex min-h-screen flex-col items-center justify-center lg:flex-row lg:justify-between">
+        <section className="relative flex min-h-screen flex-col items-center justify-center lg:flex-row lg:justify-between max-w-6xl mx-auto">
           {/* Left Content Area */}
           <div className="z-10 w-full max-w-2xl text-center lg:w-3/5 lg:text-left">
             <h1 className="text-4xl font-extrabold tracking-tight text-heimdall-text-primary sm:text-5xl md:text-6xl animate-slide-in-fade-in">
