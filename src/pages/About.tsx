@@ -120,7 +120,7 @@ export default function About() {
             <CardContent className="space-y-3 text-sm text-muted-foreground">
               <p>
                 Kevin is a seasoned operator in political and grassroots organizing, combining a
-                strong marketing foundation with a strategist’s discipline. He integrates proven
+                strong marketing foundation with a strategist's discipline. He integrates proven
                 community organizing methods with data-informed outreach to deliver measurable
                 outcomes.
               </p>
@@ -205,7 +205,7 @@ export default function About() {
                   Advised 150+ blockchain companies across product, security, and go-to-market
                 </li>
                 <li>Led initiatives contributing to an $800M GoWireless exit value</li>
-                <li>Hosts “Around the Block,” interviewing leaders in crypto and technology</li>
+                <li>Hosts "Around the Block," interviewing leaders in crypto and technology</li>
               </ul>
               <p>
                 At Heimdall, Jefferson owns platform architecture, data integrity, and API-first
@@ -235,24 +235,29 @@ export default function About() {
             <CardHeader>
               <CardTitle>Investors & Board</CardTitle>
               <CardDescription>
-                We’re proud to be backed by 5IR Funds — a venture firm focused on AI, blockchain,
+                We're proud to be backed by 5IR Funds — a venture firm focused on AI, blockchain,
                 quantum, and other frontier technologies.
               </CardDescription>
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground space-y-4">
-              <div>
-                <p className="mb-2">
-                  Investor:{" "}
-                  <a
-                    href="https://www.5irfunds.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    5IR Funds
-                  </a>
-                </p>
-                <p>Board of Directors: John (5IR Funds), Jefferson Nunn, and Sam Nevarez.</p>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                  <span className="text-lg font-bold text-gray-600">5IR</span>
+                </div>
+                <div>
+                  <p className="mb-2">
+                    Investor:{" "}
+                    <a
+                      href="https://www.5irfunds.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      5IR Funds
+                    </a>
+                  </p>
+                  <p>Board of Directors: John (5IR Funds), Jefferson Nunn, and Sam Nevarez.</p>
+                </div>
               </div>
               <p>
                 5IR Funds backs visionary founders with deep technical diligence and collaborative
@@ -268,11 +273,11 @@ export default function About() {
         <div className="text-center max-w-3xl mx-auto">
           <h3 className="text-2xl font-bold mb-3">Partner with Heimdall</h3>
           <p className="text-muted-foreground mb-6">
-            Whether you’re modernizing financial operations or scaling omni-channel outreach, we’ll
+            Whether you're modernizing financial operations or scaling omni-channel outreach, we'll
             help you deliver with confidence.
           </p>
           <Button size="lg" asChild>
-            <Link to="/contact">Let’s Talk</Link>
+            <Link to="/contact">Let's Talk</Link>
           </Button>
         </div>
       </section>
