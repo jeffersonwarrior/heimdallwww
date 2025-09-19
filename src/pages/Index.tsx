@@ -13,6 +13,7 @@ import React, { Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import CampaignFlow from "@/components/CampaignFlow";
 
 const EngagementLineChartLazyImport = () => import("@/components/charts/EngagementLineChart");
 const EngagementLineChartLazy = React.lazy(() =>
@@ -113,6 +114,7 @@ const Index = () => {
         <section className="relative flex min-h-screen flex-col items-center justify-center lg:flex-row lg:justify-between max-w-6xl mx-auto">
           {/* Left Content Area */}
           <div className="z-10 w-full max-w-2xl text-center lg:w-3/5 lg:text-left">
+            <CampaignFlow />
             <h1 className="text-4xl font-extrabold tracking-tight text-heimdall-text-primary sm:text-5xl md:text-6xl animate-slide-in-fade-in mb-8">
               The Modern ERP for Political Campaigns
             </h1>
