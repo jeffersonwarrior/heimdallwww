@@ -75,9 +75,9 @@ const Footer = () => {
           </div>
 
           {/* Social Links */}
-          <div className="col-span-2 md:col-span-1">
-            <h4 className="font-semibold text-white mb-4">Connect</h4>
-            <div className="flex space-x-4">
+          <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start">
+            <h4 className="font-semibold text-white mb-4 text-center md:text-left">Connect</h4>
+            <div className="flex justify-center md:justify-start space-x-4">
               <a href="#" aria-label="Twitter" className="hover:text-blue-400 transition-colors">
                 <Twitter size={20} />
               </a>
