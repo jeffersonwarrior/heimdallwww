@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Logo & Mission */}
           <div className="col-span-2 md:col-span-1">
             <h3 className="text-lg font-bold text-white mb-2">Heimdall Strategy</h3>
-            <p className="text-sm">The Political ERP for Modern Campaigns.</p>
+            <p className="text-sm">The Modern ERP for Political Campaigns.</p>
           </div>
 
           {/* Product Links */}
