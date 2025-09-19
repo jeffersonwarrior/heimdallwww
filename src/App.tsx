@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Features from "./pages/Features";
+import AIFeatures from "./pages/AIFeatures";
 import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -42,6 +43,7 @@ const App = () => (
                   <Routes>
                     <Route path="/" element={<Index />} />
                     <Route path="/features" element={<Features />} />
+                    <Route path="/ai-features" element={<AIFeatures />} />
                     <Route path="/pricing" element={<Pricing />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />

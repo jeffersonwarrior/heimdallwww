@@ -56,6 +56,7 @@ const ChartCardSkeleton = ({ title, description }: { title: string; description?
 import FAQSection from "@/components/FAQSection";
 import { RequestDemoDialog } from "@/components/RequestDemoDialog";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import SEOHead from "@/components/SEOHead";
 import { usePrefetchOnView } from "@/hooks/usePrefetchOnView";
 
 const Index = () => {
@@ -78,7 +79,7 @@ const Index = () => {
       quote:
         "Having all our voter data in one place, intelligently organized, has made our targeting incredibly effective. A game-changer!",
       author: "Maria Rodriguez",
-      title: "Field Director, 'Community First'",
+      title: "Field Director",
       avatarSrc: "https://api.dicebear.com/7.x/initials/svg?seed=MR",
     },
     {
@@ -106,26 +107,20 @@ const Index = () => {
 
   return (
     <div className="w-full bg-gradient-to-b from-heimdall-white to-heimdall-bg-light text-heimdall-text-body">
-      <Helmet>
-        <title>Heimdall Strategy — The Modern ERP for Political Campaigns</title>
-        <meta
-          name="description"
-          content="Unify your campaign with an AI platform for omnichannel communications, automated compliance, and authenticated messaging."
-        />
-      </Helmet>
+      <SEOHead canonical="/" />
       <main className="container mx-auto px-6">
         {/* Hero Section */}
         <section className="relative flex min-h-screen flex-col items-center justify-center lg:flex-row lg:justify-between max-w-6xl mx-auto">
           {/* Left Content Area */}
           <div className="z-10 w-full max-w-2xl text-center lg:w-3/5 lg:text-left">
-            <h1 className="text-4xl font-extrabold tracking-tight text-heimdall-text-primary sm:text-5xl md:text-6xl animate-slide-in-fade-in">
+            <h1 className="text-4xl font-extrabold tracking-tight text-heimdall-text-primary sm:text-5xl md:text-6xl animate-slide-in-fade-in mb-8">
               The Modern ERP for Political Campaigns
             </h1>
-            <p className="mt-6 text-lg leading-8 sm:text-xl">
+            <p className="mt-6 text-lg leading-8 sm:text-xl mb-12">
               Unify your campaign with an AI platform for omnichannel communications, automated
               compliance, and authenticated messaging.
             </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start mb-16">
               <RequestDemoDialog>
                 <Button
                   size="lg"

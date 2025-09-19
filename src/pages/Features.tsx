@@ -1,5 +1,5 @@
-import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -200,13 +200,12 @@ export default function Features() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      <Helmet>
-        <title>Platform Features — Heimdall Strategy</title>
-        <meta
-          name="description"
-          content="Explore Heimdall's comprehensive fintech platform featuring banking services, payment processing, and omni-channel communications."
-        />
-      </Helmet>
+      <SEOHead
+        title="Platform Features — Heimdall Strategy"
+        description="Explore Heimdall's comprehensive fintech platform featuring banking services, payment processing, and omni-channel communications with AI-powered automation."
+        keywords="platform features, banking services, payment processing, omnichannel communications, fintech platform, AI automation, political campaign technology"
+        canonical="/features"
+      />
 
       {/* Hero Section */}
       <section className="container mx-auto px-6 pt-24 pb-12">
