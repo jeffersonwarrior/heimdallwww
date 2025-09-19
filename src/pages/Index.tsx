@@ -111,9 +111,9 @@ const Index = () => {
       <SEOHead canonical="/" />
       <main className="container mx-auto px-6">
         {/* Hero Section */}
-        <section className="relative flex min-h-screen flex-col items-center justify-center lg:flex-row lg:justify-center max-w-6xl mx-auto">
+        <section className="relative flex min-h-screen flex-col items-center justify-center lg:flex-row lg:items-center lg:justify-center lg:gap-12 max-w-6xl mx-auto">
           {/* Left Content Area */}
-          <div className="z-10 w-full max-w-2xl text-center lg:w-3/5 lg:text-center">
+          <div className="z-10 w-full max-w-none text-center lg:w-3/5 lg:text-center">
             <CampaignFlow />
             <h1 className="text-4xl font-extrabold tracking-tight text-heimdall-text-primary sm:text-5xl md:text-6xl animate-slide-in-fade-in mb-8">
               The Modern ERP for Political Campaigns
@@ -161,7 +161,7 @@ const Index = () => {
           </div>
 
           {/* Right Visual Element */}
-          <div className="absolute right-0 top-0 h-full w-full lg:relative lg:w-2/5">
+          <div className="absolute right-0 top-0 h-full w-full lg:static lg:w-2/5 lg:h-auto lg:top-auto lg:right-auto">
             <div
               ref={usePrefetchOnView<HTMLDivElement>(() => {
                 void NetworkVisualLazyImport();
