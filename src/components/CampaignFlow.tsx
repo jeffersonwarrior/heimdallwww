@@ -43,10 +43,7 @@ const CampaignFlow = () => {
           style={{ animationDelay: `1200ms` }}
         >
           <div className="bg-card p-4 rounded-full shadow-lg border border-border flex items-center justify-center h-20 w-20">
-            <div className="flex items-center gap-1">
-              <Landmark className="h-8 w-8 text-heimdall-accent-teal" />
-              <DollarSign className="h-6 w-6 text-heimdall-accent-teal" />
-            </div>
+            <Landmark className="h-8 w-8 text-heimdall-accent-teal" />
           </div>
           <span className="text-xs text-heimdall-text-subtle text-center">Fundraising</span>
         </div>
