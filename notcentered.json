@@ -1,0 +1,32 @@
+{
+  "image": "public/screenshots/CleanShot-2025-09-19-09-27-58@2x.jpg",
+  "viewport": { "width": 1069, "height": 768 },
+  "hero": {
+    "container": {
+      "maxWidthClass": "max-w-6xl",
+      "approxWidthPx": 1069,
+      "leftPaddingPx": 24,
+      "rightPaddingPx": 24
+    },
+    "leftContentBox": {
+      "x": 96,
+      "y": 270,
+      "width": 640,
+      "centerX": 416
+    },
+    "viewportCenterX": 534.5,
+    "centerDelta": -118.5,
+    "observations": [
+      "Two-column flex layout uses lg:w-3/5 (left) and lg:w-2/5 (right).",
+      "Right decorative NetworkVisual participates in layout, shifting the visual centroid.",
+      "Left text block ends up ~118.5px left of the viewport center."
+    ],
+    "primaryCause": "Right visual is part of the flex row; the content center is computed within the 60/40 grid instead of the viewport center."
+  },
+  "recommendedFix": {
+    "decoupleRightVisual": "Absolutely position the right visual on lg+ so it no longer affects layout flow; make it pointer-events-none.",
+    "centerTextBlock": "Constrain to max-w-3xl and center with mx-auto text-center.",
+    "sectionClasses": "relative min-h-screen flex items-center justify-center overflow-hidden",
+    "rightVisualClasses": "hidden lg:block absolute right-0 inset-y-0 w-[42vw] max-w-[640px] pointer-events-none"
+  }
+}
