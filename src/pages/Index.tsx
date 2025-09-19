@@ -111,9 +111,9 @@ const Index = () => {
       <SEOHead canonical="/" />
       <main className="container mx-auto px-6">
         {/* Hero Section */}
-        <section className="relative flex min-h-screen flex-col items-center justify-center lg:flex-row lg:justify-between max-w-6xl mx-auto">
+        <section className="relative flex min-h-screen flex-col items-center justify-center lg:flex-row lg:justify-center max-w-6xl mx-auto">
           {/* Left Content Area */}
-          <div className="z-10 w-full max-w-2xl text-center lg:w-3/5 lg:text-left">
+          <div className="z-10 w-full max-w-2xl text-center lg:w-3/5 lg:text-center">
             <CampaignFlow />
             <h1 className="text-4xl font-extrabold tracking-tight text-heimdall-text-primary sm:text-5xl md:text-6xl animate-slide-in-fade-in mb-8">
               The Modern ERP for Political Campaigns
@@ -122,7 +122,7 @@ const Index = () => {
               Unify your campaign with an AI platform for omnichannel communications, automated
               compliance, and authenticated messaging.
             </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start mb-16">
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-center mb-16">
               <RequestDemoDialog>
                 <Button
                   size="lg"
