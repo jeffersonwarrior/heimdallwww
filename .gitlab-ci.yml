@@ -86,7 +86,7 @@ deploy-production:
     - echo "📤 Copying files to production EC2..."
     - scp -i ~/.ssh/id_rsa docker-compose.yml ubuntu@$EC2_HOST:/tmp/docker-compose.yml
     - echo "🔄 Deploying to production..."
-    - ssh -i ~/.ssh/id_rsa ubuntu@$EC2_HOST "sudo mkdir -p /opt/heimdall-frontend && sudo cp /tmp/docker-compose.yml /opt/heimdall-frontend/docker-compose.yml && sudo chown ubuntu:ubuntu /opt/heimdall-frontend/docker-compose.yml && cd /opt/heimdall-frontend && aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 331985399415.dkr.ecr.us-east-1.amazonaws.com && sudo docker compose down || true && sudo docker rmi 331985399415.dkr.ecr.us-east-1.amazonaws.com/heimdall-frontend:latest || true && sudo docker compose pull && sudo docker compose up -d"
+    - ssh -i ~/.ssh/id_rsa ubuntu@$EC2_HOST "sudo mkdir -p /opt/heimdall-frontend && sudo cp /tmp/docker-compose.yml /opt/heimdall-frontend/docker-compose.yml && sudo chown ubuntu:ubuntu /opt/heimdall-frontend/docker-compose.yml && cd /opt/heimdall-frontend && touch .env && sudo chown ubuntu:ubuntu .env && aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 331985399415.dkr.ecr.us-east-1.amazonaws.com && sudo docker compose down || true && sudo docker rmi 331985399415.dkr.ecr.us-east-1.amazonaws.com/heimdall-frontend:latest || true && sudo docker compose pull && sudo docker compose up -d"
     - echo "✅ Production deployment completed!"
   rules:
     - if: $CI_COMMIT_REF_NAME == "main" && $CI_PIPELINE_SOURCE == "push"
