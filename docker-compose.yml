@@ -5,6 +5,4 @@ services:
     image: 331985399415.dkr.ecr.us-east-1.amazonaws.com/heimdall-frontend:latest
     ports:
       - "3005:8080"
-    env_file:
-      - .env
     restart: unless-stopped
