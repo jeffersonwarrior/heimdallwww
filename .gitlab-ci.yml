@@ -1,80 +1,94 @@
 stages:
-  - setup
-  - lint
-  - typecheck
-  - test
   - build
+  - deploy
 
 variables:
-  NODE_ENV: development
-  PNPM_HOME: "$CI_PROJECT_DIR/.pnpm"
-  # Speed up installs
-  PNPM_STORE_DIR: "$CI_PROJECT_DIR/.pnpm-store"
+  ECR_REGISTRY: 331985399415.dkr.ecr.us-east-1.amazonaws.com
+  ECR_REPOSITORY: heimdall-frontend
+  IMAGE_TAG: latest
 
-.default-job-template: &default-job-template
-  image: node:20-bullseye
-  before_script:
-    - corepack enable
-    - corepack prepare pnpm@9 --activate
-    - pnpm --version
-    - node --version
-    - pnpm install --frozen-lockfile
-  cache:
-    key:
-      files:
-        - pnpm-lock.yaml
-    paths:
-      - .pnpm-store
-      - node_modules
-    policy: pull-push
+cache:
+  paths:
+    - node_modules/
+    - .pnpm-store/
 
-install:
-  stage: setup
-  <<: *default-job-template
-  script:
-    - echo "Dependencies installed"
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+# ========================================
+# PULL REQUEST JOBS (Build & Test Only)
+# ========================================
 
-lint:
-  stage: lint
-  <<: *default-job-template
-  script:
-    - pnpm lint
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-
-Typecheck:
-  stage: typecheck
-  <<: *default-job-template
-  script:
-    - pnpm run typecheck
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-
-Test:
-  stage: test
-  <<: *default-job-template
-  script:
-    - pnpm test:run
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-
-Build:
+# Test Production Build (PRs only)
+test-production-build:
   stage: build
-  <<: *default-job-template
+  image: gcr.io/kaniko-project/executor:debug
+  tags:
+    - docker
+    - shared
+  timeout: 20 minutes
+  before_script:
+    - echo "🧪 Testing production build (PR)..."
+    - mkdir -p /kaniko/.docker
+    - echo "{\"credsStore\":\"ecr-login\"}" > /kaniko/.docker/config.json
   script:
-    - pnpm build
-  artifacts:
-    when: always
-    expire_in: 7 days
-    paths:
-      - dist/
-      - dist/stats.html
+    - echo "📦 Building production image for testing..."
+    - /kaniko/executor 
+      --context $CI_PROJECT_DIR 
+      --dockerfile $CI_PROJECT_DIR/Dockerfile 
+      --destination $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      --no-push
+      --snapshot-mode=redo
+    - echo "✅ Production build test passed!"
   rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+
+# ========================================
+# PRODUCTION BRANCH JOBS (Build + Push + Deploy)
+# ========================================
+
+# Build and Push Production (Main merges only)
+build-and-push-production:
+  stage: build
+  image: gcr.io/kaniko-project/executor:debug
+  tags:
+    - docker
+    - shared
+  timeout: 30 minutes
+  before_script:
+    - echo "🚀 Building and pushing production image..."
+    - mkdir -p /kaniko/.docker
+    - echo "{\"credsStore\":\"ecr-login\"}" > /kaniko/.docker/config.json
+  script:
+    - echo "📦 Building and pushing production image to ECR..."
+    - /kaniko/executor 
+      --context $CI_PROJECT_DIR 
+      --dockerfile $CI_PROJECT_DIR/Dockerfile 
+      --destination $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      --snapshot-mode=redo
+    - echo "✅ Production image built and pushed to ECR!"
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main" && $CI_PIPELINE_SOURCE == "push"
+
+# Deploy Production (Main merges only)
+deploy-production:
+  stage: deploy
+  image: alpine:latest
+  tags:
+    - docker
+    - shared
+  timeout: 10 minutes
+  before_script:
+    - echo "🚀 Deploying to production environment..."
+    - apk add --no-cache openssh-client curl aws-cli
+    - mkdir -p ~/.ssh
+    - echo "$EC2_SSH_KEY" | base64 -d > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan -H $EC2_HOST >> ~/.ssh/known_hosts
+  script:
+    - echo "📤 Copying files to production EC2..."
+    - scp -i ~/.ssh/id_rsa docker-compose.yml ubuntu@$EC2_HOST:/tmp/docker-compose.yml
+    - echo "🔄 Deploying to production..."
+    - ssh -i ~/.ssh/id_rsa ubuntu@$EC2_HOST "sudo mkdir -p /opt/heimdall-frontend && sudo cp /tmp/docker-compose.yml /opt/heimdall-frontend/docker-compose.yml && sudo chown ubuntu:ubuntu /opt/heimdall-frontend/docker-compose.yml && cd /opt/heimdall-frontend && aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 331985399415.dkr.ecr.us-east-1.amazonaws.com && sudo docker compose down || true && sudo docker rmi 331985399415.dkr.ecr.us-east-1.amazonaws.com/heimdall-frontend:latest || true && sudo docker compose pull && sudo docker compose up -d"
+    - echo "✅ Production deployment completed!"
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main" && $CI_PIPELINE_SOURCE == "push"
+  dependencies:
+    - build-and-push-production

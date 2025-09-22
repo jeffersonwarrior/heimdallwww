@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  heimdall-frontend:
+    image: 331985399415.dkr.ecr.us-east-1.amazonaws.com/heimdall-frontend:latest
+    ports:
+      - "3005:8080"
+    restart: unless-stopped
+    environment:
+      - VITE_PREVIEW_ALLOWED_HOSTS=heimdallstrategy.com,www.heimdallstrategy.com
