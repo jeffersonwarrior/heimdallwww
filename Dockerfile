@@ -28,8 +28,9 @@ RUN addgroup -g 1001 -S nodejs && adduser -S nextjs -u 1001
 
 RUN npm install -g pnpm
 
-# Copy built application
+# Copy built application and public assets
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/public ./dist/public
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/vite.config.ts ./vite.config.ts
