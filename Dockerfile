@@ -45,4 +45,4 @@ USER nextjs
 EXPOSE 8080
 
 # Use serve to host the built files
-CMD ["serve", "-s", "dist", "-l", "8080", "--host", "0.0.0.0"]
+CMD ["serve", "-s", "dist", "-l", "8080"]
