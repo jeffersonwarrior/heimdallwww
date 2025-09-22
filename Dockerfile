@@ -28,9 +28,8 @@ RUN addgroup -g 1001 -S nodejs && adduser -S nextjs -u 1001
 
 RUN npm install -g pnpm
 
-# Copy built application and public assets
+# Copy built application (public files are already included by Vite)
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/vite.config.ts ./vite.config.ts
@@ -45,7 +44,5 @@ RUN chown -R nextjs:nodejs /app
 USER nextjs
 EXPOSE 8080
 
-# Use serve to host the built files from both dist and public
-# First create public directory in dist, then copy public files
-RUN mkdir -p dist/public && cp -r public/* dist/public/
-CMD ["serve", "-s", "dist", "-l", "8080"]
+# Use serve to host the built files without SPA fallback for static assets
+CMD ["serve", "dist", "-l", "8080"]
