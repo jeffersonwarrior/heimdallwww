@@ -46,6 +46,6 @@ USER nextjs
 EXPOSE 8080
 
 # Use serve to host the built files from both dist and public
-# First copy public files to dist directory, then serve dist
-RUN cp -r public/* dist/public/
+# First create public directory in dist, then copy public files
+RUN mkdir -p dist/public && cp -r public/* dist/public/
 CMD ["serve", "-s", "dist", "-l", "8080"]
