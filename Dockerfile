@@ -35,8 +35,44 @@ COPY --from=builder /app/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/vite.config.ts ./vite.config.ts
 COPY --from=builder /app/vite.config.js ./vite.config.js
 
-# Install a simple HTTP server
-RUN npm install -g serve
+# Install nginx for proper static file serving
+RUN apk add --no-cache nginx
+
+# Configure nginx to serve both static files and handle SPA routing
+COPY <<EOF /etc/nginx/nginx.conf
+events {
+    worker_connections 1024;
+}
+
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    server {
+        listen 8080;
+        server_name localhost;
+        root /app/dist;
+        index index.html;
+
+        # Serve static files directly
+        location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+            expires 1y;
+            add_header Cache-Control "public, immutable";
+            try_files \$uri =404;
+        }
+
+        # Handle SPA routing
+        location / {
+            try_files \$uri \$uri/ /index.html;
+        }
+
+        # Security headers
+        add_header X-Frame-Options "SAMEORIGIN" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header X-XSS-Protection "1; mode=block" always;
+    }
+}
+EOF
 
 # Change ownership of all files to nextjs user
 RUN chown -R nextjs:nodejs /app
@@ -44,5 +80,5 @@ RUN chown -R nextjs:nodejs /app
 USER nextjs
 EXPOSE 8080
 
-# Use serve with proper configuration for both static files and SPA
-CMD ["sh", "-c", "serve dist -l 8080 --single --cors"]
+# Use nginx instead of serve
+CMD ["nginx", "-g", "daemon off;"]
