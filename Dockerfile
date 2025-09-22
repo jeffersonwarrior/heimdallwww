@@ -44,5 +44,5 @@ RUN chown -R nextjs:nodejs /app
 USER nextjs
 EXPOSE 8080
 
-# Use serve to host the built files without SPA fallback for static assets
-CMD ["serve", "dist", "-l", "8080"]
+# Use serve with proper configuration for both static files and SPA
+CMD ["sh", "-c", "serve dist -l 8080 --single --cors"]
