@@ -44,4 +44,4 @@ USER nextjs
 EXPOSE 8080
 
 # Use vite preview for production serving
-CMD ["pnpm", "preview", "--host", "0.0.0.0", "--port", "8080", "--allowed-hosts", "all"]
+CMD ["pnpm", "preview", "--host", "0.0.0.0", "--port", "8080"]
