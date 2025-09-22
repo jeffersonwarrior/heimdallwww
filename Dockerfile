@@ -35,8 +35,8 @@ COPY --from=builder /app/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/vite.config.ts ./vite.config.ts
 COPY --from=builder /app/vite.config.js ./vite.config.js
 
-# Install all dependencies (including dev dependencies for vite preview)
-RUN pnpm install --frozen-lockfile
+# Install a simple HTTP server
+RUN npm install -g serve
 
 # Change ownership of all files to nextjs user
 RUN chown -R nextjs:nodejs /app
@@ -44,5 +44,5 @@ RUN chown -R nextjs:nodejs /app
 USER nextjs
 EXPOSE 8080
 
-# Use vite preview for production serving
-CMD ["pnpm", "preview", "--host", "0.0.0.0", "--port", "8080"]
+# Use serve to host the built files
+CMD ["serve", "-s", "dist", "-l", "8080", "--host", "0.0.0.0"]
