@@ -67,8 +67,8 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
       {showPrefs ? (
         <Preferences
           consent={consent}
-          onSave={(c) => {
-            setConsent({ ...c, necessary: true, date: new Date().toISOString() });
+          onSave={(_c) => {
+            setConsent({ ..._c, necessary: true, date: new Date().toISOString() });
             setShowPrefs(false);
             setShowBanner(false);
           }}
@@ -117,7 +117,7 @@ function Preferences({
   onClose,
 }: {
   consent: Consent | null;
-  onSave: (c: Omit<Consent, "necessary" | "date">) => void;
+  onSave: (_c: Omit<Consent, "necessary" | "date">) => void;
   onClose: () => void;
 }) {
   const [analytics, setAnalytics] = useState<boolean>(consent?.analytics ?? false);

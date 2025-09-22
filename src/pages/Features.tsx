@@ -23,11 +23,11 @@ import {
   Receipt,
   FileText,
   Phone,
-  MonitorSmartphone,
-  Headphones,
+  // MonitorSmartphone,
+  // Headphones,
   Bot,
   MessagesSquare,
-  UserCheck,
+  // UserCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 

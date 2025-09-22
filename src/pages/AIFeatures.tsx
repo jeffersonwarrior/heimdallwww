@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+// import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,16 +9,16 @@ import {
   MessageSquare,
   BarChart3,
   Shield,
-  Users,
+  // Users,
   Target,
   Sparkles,
   CheckCircle,
   ArrowRight,
   Cpu,
-  Network,
+  // Network,
   Eye,
   TrendingUp,
-  Globe,
+  // Globe,
   Lock,
 } from "lucide-react";
 import { Link } from "react-router-dom";

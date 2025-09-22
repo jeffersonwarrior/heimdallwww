@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import { createContext, useContext } from "react";
 
 export const STORAGE_KEY = "cookie_consent";
 
@@ -11,7 +11,7 @@ export type Consent = {
 
 export type CookieConsentContextValue = {
   consent: Consent | null;
-  setConsent: (value: Consent) => void;
+  setConsent: (_value: Consent) => void;
   openPreferences: () => void;
 };
 

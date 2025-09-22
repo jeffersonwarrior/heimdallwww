@@ -1,4 +1,4 @@
-import { Smartphone, Laptop, Mic, Landmark, DollarSign } from "lucide-react";
+import { Smartphone, Laptop, Mic, Landmark } from "lucide-react";
 import React from "react";
 
 const IconNode = ({

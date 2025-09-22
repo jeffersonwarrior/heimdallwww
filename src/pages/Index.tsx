@@ -10,9 +10,9 @@ import {
 } from "lucide-react";
 import TestimonialCard from "@/components/TestimonialCard";
 import React, { Suspense } from "react";
-import { Helmet } from "react-helmet-async";
+// import { Helmet } from "react-helmet-async";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import CampaignFlow from "@/components/CampaignFlow";
 
 const EngagementLineChartLazyImport = () => import("@/components/charts/EngagementLineChart");
@@ -37,7 +37,7 @@ const GeometricPatternLazy = React.lazy(() =>
   GeometricPatternLazyImport().then((m) => ({ default: m.default })),
 );
 
-const ChartCardSkeleton = ({ title, description }: { title: string; description?: string }) => (
+const ChartCardSkeleton = ({ _title, description }: { _title: string; description?: string }) => (
   <Card className="bg-card shadow-xl">
     <CardHeader>
       <CardTitle>
@@ -284,7 +284,7 @@ const Index = () => {
                 <Suspense
                   fallback={
                     <ChartCardSkeleton
-                      title="Voter Engagement"
+                      _title="Voter Engagement"
                       description="Monthly engagement trends compared to previous period."
                     />
                   }
@@ -339,7 +339,7 @@ const Index = () => {
                 <Suspense
                   fallback={
                     <ChartCardSkeleton
-                      title="Compliance Error Reduction"
+                      _title="Compliance Error Reduction"
                       description="Average monthly compliance errors before and after Heimdall."
                     />
                   }
@@ -394,7 +394,7 @@ const Index = () => {
                 <Suspense
                   fallback={
                     <ChartCardSkeleton
-                      title="Voter Data Segmentation"
+                      _title="Voter Data Segmentation"
                       description="Distribution of different voter segments."
                     />
                   }

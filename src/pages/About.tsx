@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Users, Target, Shield, Sparkles, ExternalLink, ArrowRight, Linkedin } from "lucide-react";
+import { Users, Target, Shield, Sparkles, ArrowRight, Linkedin } from "lucide-react";
 
 export default function About() {
   return (

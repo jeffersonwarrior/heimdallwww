@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react"; // For a mobile menu icon
+// import { Menu } from "lucide-react"; // For a mobile menu icon
 import { RequestDemoDialog } from "@/components/RequestDemoDialog";
 import { DesktopNav } from "@/components/DesktopNav";
 import { MobileNav } from "@/components/MobileNav";
