@@ -32,6 +32,7 @@ RUN npm install -g pnpm
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=builder /app/vite.config.ts ./vite.config.ts
 
 # Install all dependencies (including dev dependencies for vite preview)
 RUN pnpm install --frozen-lockfile
