@@ -1,20 +1,33 @@
-# Ignore everything except www directory
+# Ignore everything except src directory and config files
 *
-!www/
+!src/
 
 # Keep .gitignore and other important files
 !.gitignore
 !README.md
 !.gitignore
 !package.json
+!pnpm-lock.yaml
 !yarn.lock
 !npm-shrinkwrap.json
 !version.txt
 
-# Keep www directory contents
-!www/**
-.www/**
-www/**/*
+# Keep src directory contents
+!src/**
+.src/**
+src/**/*
+
+# Keep config files
+!*.config.*
+!*.config.*
+!components.json
+!tsconfig.*
+!tailwind.config.*
+!postcss.config.*
+!vite.config.*
+!vitest.config.*
+!index.html
+!public/**
 
 # Common development and system files to ignore
 **/.DS_Store
