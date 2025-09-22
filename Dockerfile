@@ -30,7 +30,7 @@ RUN npm install -g pnpm
 
 # Copy built application and public assets
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/public ./dist/public
+COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/vite.config.ts ./vite.config.ts
@@ -45,5 +45,7 @@ RUN chown -R nextjs:nodejs /app
 USER nextjs
 EXPOSE 8080
 
-# Use serve to host the built files
+# Use serve to host the built files from both dist and public
+# First copy public files to dist directory, then serve dist
+RUN cp -r public/* dist/public/
 CMD ["serve", "-s", "dist", "-l", "8080"]
