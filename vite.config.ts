@@ -9,6 +9,11 @@ export default defineConfig({
     host: "::",
     port: 8080,
   },
+  preview: {
+    host: "::",
+    port: 8080,
+    allowedHosts: ["heimdallstrategy.com", "localhost", "127.0.0.1"],
+  },
   plugins: [
     dyadComponentTagger(),
     react(),
