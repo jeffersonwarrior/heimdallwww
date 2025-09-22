@@ -37,6 +37,9 @@ COPY --from=builder /app/vite.config.ts ./vite.config.ts
 # Install all dependencies (including dev dependencies for vite preview)
 RUN pnpm install --frozen-lockfile
 
+# Change ownership of all files to nextjs user
+RUN chown -R nextjs:nodejs /app
+
 USER nextjs
 EXPOSE 8080
 
