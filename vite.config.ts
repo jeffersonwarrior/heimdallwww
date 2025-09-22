@@ -12,7 +12,7 @@ export default defineConfig({
   preview: {
     host: "::",
     port: 8080,
-    allowedHosts: "all",
+    allowedHosts: ["all"],
   },
   plugins: [
     dyadComponentTagger(),
