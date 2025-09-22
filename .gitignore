@@ -28,6 +28,7 @@ src/**/*
 !vitest.config.*
 !index.html
 !public/**
+!server.js
 
 # Common development and system files to ignore
 **/.DS_Store
