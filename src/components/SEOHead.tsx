@@ -36,7 +36,7 @@ export default function SEOHead({
         url: baseUrl,
         logo: {
           "@type": "ImageObject",
-          url: `${baseUrl}/heimdall-logo.svg`,
+          url: `${baseUrl}/heimdall-logo-tight-header.png`,
         },
         description:
           "AI-powered political campaign management platform providing omnichannel communications, automated compliance, and voter engagement tools.",
