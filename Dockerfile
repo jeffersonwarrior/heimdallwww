@@ -44,8 +44,8 @@ RUN chown -R nextjs:nodejs /app
 USER nextjs
 EXPOSE 8080
 
-# Copy the custom server
-COPY server.js /app/server.js
+# Install a simple HTTP server that works properly
+RUN npm install -g serve
 
 # Change ownership of all files to nextjs user
 RUN chown -R nextjs:nodejs /app
@@ -53,5 +53,5 @@ RUN chown -R nextjs:nodejs /app
 USER nextjs
 EXPOSE 8080
 
-# Use custom Node.js server
-CMD ["node", "server.js"]
+# Use serve with the same configuration that works for other images
+CMD ["serve", "dist", "-l", "8080"]
